@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://fivehanz.xyz/sitemap.xml
