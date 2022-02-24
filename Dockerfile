@@ -4,4 +4,4 @@ WORKDIR /home/app
 
 COPY . /home/app
 
-CMD ["-r", "/home/app/", "-c", "config.toml", "serve"]
+CMD ["-r", "/home/app/", "-c", "config.toml", "build"]
