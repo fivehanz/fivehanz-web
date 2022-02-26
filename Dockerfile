@@ -1,7 +1,10 @@
-FROM ghcr.io/getzola/zola:v0.15.3
+FROM rockylinux:latest
 
-WORKDIR /home/app
+RUN dnf update -y && dnf install -y nginx && dnf clean all
 
-COPY . /home/app
+WORKDIR /usr/share/nginx/
+RUN rm -rf html
+COPY ./public /usr/share/nginx/html
 
-CMD ["-r", "/home/app/", "-c", "config.toml", "serve"]
+EXPOSE 80
+ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
