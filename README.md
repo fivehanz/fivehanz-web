@@ -3,8 +3,7 @@
 TODO
 
 - [x] Nextjs
-  - [ ] set up semantic-release
-  - [ ] set up husky, prettier, lint-staged, commitlint, next-sitemap
+  - [x] set up husky, prettier, commitlint, next-sitemap
   - [ ] Decide on a UI Library (Chakra UI, Radix UI)
   - [ ] Set up auto build and deploy system for main, staging and dev branch
   - [ ] Set DNS records for the Domain
