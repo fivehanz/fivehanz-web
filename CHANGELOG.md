@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/fivehanz/fivehanz-web/compare/v0.1.1...v0.1.2) (2022-04-08)
+
+
+### Features
+
+* init changelog msgs ([b404723](https://github.com/fivehanz/fivehanz-web/commit/b404723d435a6d50ce40bd8691c54992c27b928f))
+
+
+### Bug Fixes
+
+* version, commitlint ([91c59c0](https://github.com/fivehanz/fivehanz-web/commit/91c59c01f0bcde853927318a10f3bd21d5b99452))
+
 ### 0.1.1 (2022-04-08)
 
 
