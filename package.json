@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write src",
+    "release": "standard-version",
+    "push-release": "git push --follow-tags origin main",
     "postinstall": "husky install"
   },
   "dependencies": {
