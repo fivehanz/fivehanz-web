@@ -4,9 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-/.yarn
-.yarn/*
-.yarnrc.yml
+
 # testing
 /coverage
 
@@ -25,12 +23,23 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
 # local env files
-.env*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # vercel
 .vercel
-.pnp.cjs
-.pnp.loader.mjs
+
+**/public/workbox-*.js
+**/public/sw.js
+**/public/service-worker.js
+
+# sitemap
+robots.txt
+sitemap*.xml
+
+# TS
+*.tsbuildinfo
