@@ -17,8 +17,11 @@ const Page404 = () => {
 
   return (
     <Flex minHeight="70vh" direction="column" justifyContent="center">
+      <Box>
+        <Heading textAlign="center">Page not Found.</Heading>
+      </Box>
       <MotionBox
-        animate={{ y: 20 }}
+        animate={{ y: 10 }}
         transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
         width={["100%", "70%", "60%", "60%"]}
         margin="0 auto"
@@ -38,16 +41,14 @@ const Page404 = () => {
         </ChakraLink>
       </Text>
 
-      <Box marginY={4}>
-        <Heading textAlign="center">Page not Found.</Heading>
-
+      <Box marginY={2}>
         <Box textAlign="center" marginTop={4}>
-          <Text>It&apos;s Okay!</Text>
+          {/* <Text my={5}>It&apos;s Okay!</Text> */}
           <Link href="/" passHref>
             <Button
               backgroundColor={colorMode === "light" ? "gray.300" : "teal.500"}
             >
-              Let&apos;s Head Back
+              It&apos;s Okay! Let&apos;s Head Back.
             </Button>
           </Link>
         </Box>

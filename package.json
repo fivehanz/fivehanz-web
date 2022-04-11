@@ -1,8 +1,8 @@
 {
-  "name": "nextarter-chakra",
+  "name": "fivehanz",
   "version": "0.1.3",
   "private": true,
-  "author": "sozonome",
+  "author": "fivehanz",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

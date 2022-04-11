@@ -12,6 +12,15 @@ import Link from "next/link";
 
 import ThemeToggle from "./ThemeToggle";
 
+const links = [
+  { name: "home", href: "/" },
+  { name: "devBlog", href: "https://blog.fivehanz.xyz" },
+  { name: "blog", href: "/blog" },
+  { name: "projects", href: "/projects" },
+  { name: "resources", href: "/resources" },
+  { name: "contact", href: "/contact" },
+];
+
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -42,10 +51,9 @@ const Header = () => {
         </HStack>
 
         <HStack as="nav" spacing={10} display={{ base: "none", md: "flex" }}>
-          <Link href="/">Home</Link>
-          <Link href="https://blog.fivehanz.xyz">devBlog</Link>
-          {/* <Link href="/blog">Blog</Link> */}
-          <Link href="/contact">Contact</Link>
+          {links.map((link) => (
+            <Link href={link.href}>{link.name}</Link>
+          ))}
           <Box marginLeft="auto">
             <ThemeToggle />
           </Box>
@@ -54,10 +62,9 @@ const Header = () => {
       {isOpen ? (
         <Box m={4} display={{ md: "none" }}>
           <Stack as="nav" spacing={4}>
-            <Link href="/">Home</Link>
-            <Link href="https://blog.fivehanz.xyz">devBlog</Link>
-            {/* <Link href="/blog">Blog</Link> */}
-            <Link href="/contact">Contact</Link>
+            {links.map((link) => (
+              <Link href={link.href}>{link.name}</Link>
+            ))}
           </Stack>
         </Box>
       ) : null}
