@@ -16,7 +16,7 @@ const Page404 = () => {
   const { colorMode } = useColorMode();
 
   return (
-    <Flex minHeight="70vh" direction="column" justifyContent="center">
+    <Flex my={6} minHeight="70vh" direction="column" justifyContent="center">
       <Box>
         <Heading textAlign="center">Page not Found.</Heading>
       </Box>
