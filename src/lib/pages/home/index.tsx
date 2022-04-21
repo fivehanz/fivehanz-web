@@ -1,17 +1,15 @@
-import { Box } from "@chakra-ui/react";
+import { Container, Text } from "@nextui-org/react";
 
 const Home = () => {
   return (
-    <Box
-      display={{ md: "flex" }}
+    <Container
+      display="flex"
       alignItems="center"
-      minHeight="70vh"
-      gap={8}
-      mb={8}
-      w="full"
+      style={{ height: "70vh" }}
+      // w="full"
     >
-      <Box>Hi</Box>
-    </Box>
+      <Text>Hi</Text>
+    </Container>
   );
 };
 

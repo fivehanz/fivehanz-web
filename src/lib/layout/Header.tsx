@@ -1,15 +1,16 @@
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Flex,
-  Heading,
-  HStack,
-  Stack,
-  IconButton,
-  useDisclosure,
-} from "@chakra-ui/react";
-import Link from "next/link";
+// import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+// import {
+//   Box,
+//   Flex,
+//   Heading,
+//   HStack,
+//   Stack,
+//   IconButton,
+//   useDisclosure,
+// } from "@chakra-ui/react";
+import { Container, Text, Link } from "@nextui-org/react";
 
+// eslint-disable-next-line import/no-named-as-default
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
@@ -25,22 +26,25 @@ const links = [
 ];
 
 const Header = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box>
-      <Flex
+    <>
+      <Container
         as="header"
-        width="full"
-        align="center"
-        justifyContent="space-between"
+        wrap="nowrap"
+        display="flex"
+        justify="space-between"
+        alignItems="baseline"
       >
-        <HStack>
-          <Heading as="h1" size="md">
-            <Link href="/">fivehanz</Link>
-          </Heading>
-        </HStack>
+        <Container>
+          <Text h2 weight="bold">
+            <Link color="secondary" href="/">
+              fivehanz.xyz
+            </Link>
+          </Text>
+        </Container>
 
-        <HStack>
+        {/* <HStack>
           <Box display={{ md: "none" }}>
             <ThemeToggle />
           </Box>
@@ -51,18 +55,26 @@ const Header = () => {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-        </HStack>
+        </HStack> */}
 
-        <HStack as="nav" spacing={10} display={{ base: "none", md: "flex" }}>
+        <Container
+          as="nav"
+          display="flex"
+          direction="row"
+          wrap="nowrap"
+          justify="space-between"
+        >
           {links.map((link) => (
-            <Link href={link.href}>{link.name}</Link>
+            <Text h4 weight="bold">
+              <Link href={link.href}>{link.name}</Link>
+            </Text>
           ))}
-          <Box marginLeft="auto">
-            <ThemeToggle />
-          </Box>
-        </HStack>
-      </Flex>
-      {isOpen ? (
+          {/* < marginLeft="auto"> */}
+          <ThemeToggle />
+          {/* </Box> */}
+        </Container>
+      </Container>
+      {/* {isOpen ? (
         <Box m={4} display={{ md: "none" }}>
           <Stack as="nav" spacing={4}>
             {links.map((link) => (
@@ -70,8 +82,8 @@ const Header = () => {
             ))}
           </Stack>
         </Box>
-      ) : null}
-    </Box>
+            ) : null} */}
+    </>
   );
 };
 

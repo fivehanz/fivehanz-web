@@ -1,22 +1,24 @@
-import {
-  Box,
-  Button,
-  Heading,
-  Image,
-  Text,
-  Link as ChakraLink,
-  useColorMode,
-  Flex,
-} from "@chakra-ui/react";
-import Link from "next/link";
+/* eslint-disable react/jsx-no-useless-fragment */
+// import {
+//   Box,
+//   Button,
+//   Heading,
+//   Image,
+//   Text,
+//   Link as ChakraLink,
+//   useColorMode,
+//   Flex,
+// } from "@chakra-ui/react";
+// import Link from "next/link";
 
-import MotionBox from "lib/components/motion/Box";
+// import MotionBox from "lib/components/motion/Box";
 
 const Page404 = () => {
-  const { colorMode } = useColorMode();
+  // const { colorMode } = useColorMode();
 
   return (
-    <Flex my={6} minHeight="70vh" direction="column" justifyContent="center">
+    <>
+      {/* <Flex my={6} minHeight="70vh" direction="column" justifyContent="center">
       <Box>
         <Heading textAlign="center">Page not Found.</Heading>
       </Box>
@@ -43,7 +45,7 @@ const Page404 = () => {
 
       <Box marginY={2}>
         <Box textAlign="center" marginTop={4}>
-          {/* <Text my={5}>It&apos;s Okay!</Text> */}
+          {/* <Text my={5}>It&apos;s Okay!</Text> 
           <Link href="/" passHref>
             <Button
               backgroundColor={colorMode === "light" ? "gray.300" : "teal.500"}
@@ -53,7 +55,8 @@ const Page404 = () => {
           </Link>
         </Box>
       </Box>
-    </Flex>
+    </Flex> */}
+    </>
   );
 };
 
