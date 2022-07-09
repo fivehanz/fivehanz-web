@@ -6,10 +6,10 @@
 # TODO
 
 - [x] Nextjs
-  - [x] set up husky, prettier, commitlint, next-sitemap
-  - [x] TailwindCSS
+  - [x] set up husky, prettier, commitlint, next-sitemap, framer-motion
+  - [x] TailwindCSS //might remove
   - [x] Set up auto build and deploy system for main & next branch
   - [x] Set DNS records for the Domain
-- [x] set up sanity
+- [x] set up sanity, scss
 - [ ] plan and build a portfolio
 - [ ] fxnz dash
