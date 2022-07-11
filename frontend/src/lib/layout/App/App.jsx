@@ -1,11 +1,11 @@
 import { About, Header, Footer, Skills, Work } from "../../containers";
 import { Navbar } from "../../components";
 
-import styles from "./App.module.scss";
+import "./App.scss";
 
 const App = () => {
   return (
-    <div className={styles.app}>
+    <div className="app">
       <Navbar />
       <Header />
       <About />

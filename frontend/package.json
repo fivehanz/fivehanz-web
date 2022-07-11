@@ -42,7 +42,6 @@
     ]
   },
   "devDependencies": {
-    "commitlint": "^17.0.3",
     "prettier": "^2.7.1"
   }
 }
