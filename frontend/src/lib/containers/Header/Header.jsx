@@ -1,7 +1,75 @@
-import "./Header.module.scss";
+import React from "react";
+import { motion } from "framer-motion";
+import "./Header.scss";
+import { images } from "../../constants";
+
+const scaleVariants = {
+  whileInView: {
+    scale: [0, 1],
+    opacity: [0, 1],
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const Header = () => {
-  return <div>Header</div>;
+  return (
+    <div id="home" className="app__header app__flex">
+      <motion.div
+        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.5 }}
+        className="app__header-info"
+      >
+        <div className="app__header-badge">
+          <div className="badge-cmp app__flex">
+            <div style={{ marginLeft: 10 }}>
+              <p className="p-text" style={{ marginLeft: 2 }}>
+                Hey, I'm
+              </p>
+              <h1 className="head-text">hanz</h1>
+            </div>
+            <span>👋</span>
+          </div>
+
+          <div className="tag-cmp app__flex">
+            <p className="p-text">Frontend Engineer</p>
+            {/* <p className="p-text">Hello, I am</p> */}
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        className="app__header-img"
+      >
+        <img src={images.profile} alt="profile" />
+        <motion.img
+          whileInView={{ scale: [0, 1] }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="overlay_circle"
+          src={images.circle}
+          alt="profile circle"
+        />
+      </motion.div>
+
+      <motion.div
+        whileInView={scaleVariants.whileInView}
+        className="app__header-circles"
+        variant={scaleVariants}
+      >
+        {[images.flutter, images.redux, images.sass].map((circle, index) => {
+          return (
+            <div className="circle-cmp app__flex" key={`circle-${index}`}>
+              <img src={circle} alt="cirlce" />
+            </div>
+          );
+        })}
+      </motion.div>
+    </div>
+  );
 };
 
 export default Header;
