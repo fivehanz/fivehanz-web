@@ -1,48 +1,29 @@
 {
-  "name": "fivehanz",
-  "version": "0.1.3",
+  "name": "fivehanz-web",
+  "version": "0.1.0",
   "private": true,
-  "author": "fivehanz",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint src --fix && yarn format",
-    "type-check": "tsc --noEmit",
-    "format": "prettier --write src",
-    "up": "yarn upgrade-interactive",
-    "up-latest": "yarn up --latest",
-    "release": "standard-version",
-    "push-release": "git push --follow-tags origin main",
-    "prepare": "husky install"
+    "lint:fix": "eslint src --fix && next lint",
+    "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.1.7",
-    "@chakra-ui/react": "^1.8.6",
-    "@emotion/react": "^11.8.2",
-    "@emotion/styled": "^11.8.1",
-    "framer-motion": "^5.6.0",
-    "next": "^12.1.0",
-    "next-pwa": "^5.4.6",
-    "next-seo": "^5.3.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1"
+    "next": "12.2.5",
+    "next-seo": "^5.5.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^16.2.1",
-    "@types/react": "^17.0.40",
-    "commitlint": "^16.2.3",
-    "eslint": "^8.11.0",
-    "eslint-config-next": "^12.1.0",
-    "eslint-config-sznm": "^0.2.1",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.7",
-    "next-sitemap": "^2.5.1",
-    "prettier": "^2.6.0",
-    "standard-version": "^9.3.2",
-    "typescript": "^4.6.3"
+    "@types/node": "18.7.14",
+    "@types/react": "18.0.18",
+    "@types/react-dom": "18.0.6",
+    "eslint": "^8.23.0",
+    "eslint-config-next": "12.2.5",
+    "next-sitemap": "^3.1.21",
+    "prettier": "^2.7.1",
+    "typescript": "4.8.2"
   }
 }
