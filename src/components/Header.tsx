@@ -1,5 +1,25 @@
 const Header = () => {
-  return <div>Header</div>;
+  return (
+    <header className="header">
+      <h2 className="brand">fivehanz.</h2>
+      <nav>
+        <ul className="nav-list">
+          <li className="nav-list-item">
+            <a href="#home">home </a>
+          </li>
+          <li className="nav-list-item">
+            <a href="#projects">projects </a>
+          </li>
+          <li className="nav-list-item">
+            <a href="#about">about </a>
+          </li>
+          <li className="nav-list-item">
+            <a href="#contact">contact </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
 };
 
 export default Header;

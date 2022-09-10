@@ -1,5 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap");
+
+/* variables */
+
+$desktop: 80rem;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-bold: 600;
+$fw-extrabold: 800;
+
+/* reset */
+
 * {
   margin: 0;
   padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-size: 100%;
   box-sizing: border-box;
+}
+
+/* defaults */
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+/* styles */
+
+.container {
+  max-width: $desktop;
+  padding: 0 0.5rem;
+  margin: 0 auto;
+}
+
+.header {
+  margin-top: 2.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  nav > .nav-list {
+    display: flex;
+    justify-content: space-between;
+
+    .nav-list-item {
+      margin: 0 1rem;
+
+      a {
+        font-size: 1rem;
+        font-weight: $fw-regular;
+      }
+    }
+  }
+}
+
+.brand {
+  font-size: 2.25rem;
+  font-weight: $fw-extrabold;
 }
