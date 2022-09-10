@@ -10,8 +10,9 @@ import LineBreak from "../components/LineBreak";
 
 const Home: NextPage = () => {
   return (
-    <div className="container">
+    <div className="">
       <Header />
+      {/* <LineBreak /> */}
       <Hero />
       <LineBreak />
       <Projects />
@@ -19,7 +20,7 @@ const Home: NextPage = () => {
       <About />
       <LineBreak />
       <Contact />
-      <LineBreak />
+      {/* <LineBreak /> */}
       <Footer />
     </div>
   );

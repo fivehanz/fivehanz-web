@@ -1,7 +1,9 @@
+import Brand from "./Brand";
+
 const Header = () => {
   return (
-    <header className="header">
-      <h2 className="brand">fivehanz.</h2>
+    <header className="header container">
+      <Brand />
       <nav>
         <ul className="nav-list">
           <li className="nav-list-item">

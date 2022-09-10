@@ -43,18 +43,24 @@ body {
   font-family: "Manrope", sans-serif;
 }
 
+hr {
+  background: rgba(231, 231, 231, 0.5);
+  padding: 1px;
+  margin: 1rem auto;
+}
+
 /* styles */
 
 .container {
   max-width: $desktop;
-  padding: 0 0.5rem;
+  padding: 0 0.8rem;
   margin: 0 auto;
 }
 
-/* header /nav */
+/* header/nav */
 
 .header {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 
   display: flex;
   justify-content: space-between;
@@ -126,12 +132,14 @@ body {
 
   .projects-heading {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row-reverse;
 
     .projects-text {
       font-size: 1.875rem;
       font-weight: $fw-extrabold;
       line-height: 2;
+
+      padding: 0 0.8rem;
 
       position: relative;
     }
@@ -142,7 +150,7 @@ body {
       content: "";
       background: rgb(0, 0, 0);
       bottom: 0;
-      right: 0;
+      right: 0.8rem;
       height: 0.35rem;
       width: 4rem;
     }
@@ -188,7 +196,15 @@ body {
   }
 }
 
-hr {
-  background: rgba(231, 231, 231, 0.5);
-  padding: 1px;
+/* footer */
+
+footer.footer {
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .copyright {
+    color: $color-secondary;
+  }
 }
