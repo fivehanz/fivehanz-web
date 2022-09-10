@@ -9,6 +9,9 @@ $fw-regular: 400;
 $fw-bold: 600;
 $fw-extrabold: 800;
 
+$fs-heading: 1.875rem;
+$fs-hero: 2.8125rem;
+
 $color-primary: rgb(0, 0, 0);
 $color-secondary: rgba(128, 128, 128, 1);
 $color-thumb-box: rgb(248, 248, 248);
@@ -97,7 +100,7 @@ hr {
 
   .hero-text {
     font-family: "DotGothic16", sans-serif;
-    font-size: 2.8125rem;
+    font-size: $fs-hero;
     font-weight: $fw-regular;
 
     position: relative;
@@ -135,7 +138,7 @@ hr {
     flex-direction: row-reverse;
 
     .projects-text {
-      font-size: 1.875rem;
+      font-size: $fs-heading;
       font-weight: $fw-extrabold;
       line-height: 2;
 
@@ -206,7 +209,7 @@ hr {
     flex-direction: row;
 
     .about-text {
-      font-size: 1.875rem;
+      font-size: $fs-heading;
       font-weight: $fw-extrabold;
       line-height: 2;
 
@@ -232,16 +235,6 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .wip {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 10vh;
-    font-size: 2rem;
-    color: $color-secondary;
   }
 }
 
@@ -281,6 +274,39 @@ hr {
   }
 }
 
+/* contact */
+
+.contact {
+  padding: 2rem 0;
+
+  .contact-heading {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .contact-text {
+      font-size: $fs-heading;
+      font-weight: $fw-extrabold;
+      line-height: 2;
+
+      padding: 0 0.8rem;
+
+      position: relative;
+    }
+
+    .contact-text:after {
+      position: absolute;
+
+      content: "";
+      background: rgb(0, 0, 0);
+      bottom: 0;
+      right: 0.8rem;
+
+      height: 0.35rem;
+      width: 3.5rem;
+    }
+  }
+}
+
 /* footer */
 
 footer.footer {
@@ -292,4 +318,16 @@ footer.footer {
   .copyright {
     color: $color-secondary;
   }
+}
+
+/* temp */
+
+.wip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 10vh;
+  font-size: 2rem;
+  color: $color-secondary;
 }
