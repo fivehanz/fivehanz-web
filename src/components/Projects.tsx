@@ -2,7 +2,7 @@ import Card from "./Card";
 
 const Projects = () => {
   return (
-    <div className="projects container" id="projects">
+    <section className="projects container" id="projects">
       <div className="projects-heading">
         <h2 className="projects-text">projects</h2>
       </div>
@@ -20,7 +20,7 @@ const Projects = () => {
           <Card />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
