@@ -9,6 +9,10 @@ $fw-regular: 400;
 $fw-bold: 600;
 $fw-extrabold: 800;
 
+$color-primary: rgb(0, 0, 0);
+$color-secondary: rgba(128, 128, 128, 1);
+$color-thumb-box: rgb(248, 248, 248);
+
 /* reset */
 
 * {
@@ -28,6 +32,11 @@ li {
 
 a {
   text-decoration: none;
+  color: $color-primary;
+}
+
+a:hover {
+  color: $color-secondary;
 }
 
 body {
@@ -96,5 +105,85 @@ body {
     right: 0;
     height: 0.35rem;
     width: 2.5rem;
+  }
+}
+
+/* projects */
+
+.projects {
+  padding: 2rem 0;
+
+  .projects-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .projects-item {
+    margin: 4rem 0;
+  }
+
+  .projects-heading {
+    display: flex;
+    justify-content: flex-end;
+
+    .projects-text {
+      font-size: 1.875rem;
+      font-weight: $fw-extrabold;
+      line-height: 2;
+
+      position: relative;
+    }
+
+    .projects-text:after {
+      position: absolute;
+
+      content: "";
+      background: rgb(0, 0, 0);
+      bottom: 0;
+      right: 0;
+      height: 0.35rem;
+      width: 4rem;
+    }
+  }
+}
+
+.card {
+  width: 35rem;
+  display: grid;
+  grid-template-columns: 16rem auto;
+  gap: 2rem;
+
+  .thumb-box {
+    width: 16rem;
+    height: 16rem;
+    background: $color-thumb-box;
+  }
+
+  .card-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .titles {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      line-height: 1.5;
+
+      .title {
+        font-size: 1.25rem;
+        font-weight: $fw-extrabold;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    .paragraph {
+      color: $color-secondary;
+    }
   }
 }
