@@ -1,14 +1,28 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
+
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Projects from "../components/Projects";
+import LineBreak from "../components/LineBreak";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <main>
-        <h2>Hey! this is a new Nextjs site.</h2>
-      </main>
-    </>
+    <div>
+      <Header />
+      {/* <LineBreak /> */}
+      <Hero />
+      <LineBreak />
+      <Projects />
+      <LineBreak />
+      <About />
+      <LineBreak />
+      <Contact />
+      {/* <LineBreak /> */}
+      <Footer />
+    </div>
   );
 };
 
