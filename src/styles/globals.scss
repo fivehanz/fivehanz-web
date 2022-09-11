@@ -378,10 +378,10 @@ hr {
   .about-card {
     height: 30rem;
     grid-template-rows: 14rem auto;
-  }
 
-  .thumb-box {
-    place-self: center;
+    .thumb-box {
+      place-self: center;
+    }
   }
 }
 
