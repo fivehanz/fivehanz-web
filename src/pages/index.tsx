@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { motion, useScroll } from "framer-motion";
 
 import Contact from "../components/sections/Contact";
 import Footer from "../components/sections/Footer";
@@ -9,8 +10,14 @@ import Projects from "../components/sections/Projects";
 import LineBreak from "../components/components/LineBreak";
 
 const Home: NextPage = () => {
+  const { scrollYProgress } = useScroll();
+
   return (
     <div>
+      <motion.div
+        className="progress-bar"
+        style={{ scaleX: scrollYProgress }}
+      />
       <Header />
       {/* <LineBreak /> */}
       <Hero />

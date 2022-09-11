@@ -442,3 +442,15 @@ footer.footer {
   font-size: 2rem;
   color: $color-secondary;
 }
+
+/* progress bar */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.4rem;
+  background: $color-primary;
+  transform-origin: 0%;
+}
