@@ -326,7 +326,7 @@ hr {
   }
 
   .about-card-box {
-    margin: 4rem auto;
+    margin: 4rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -336,7 +336,6 @@ hr {
 .about-card {
   max-width: 60rem;
   display: grid;
-  grid-template-columns: 14rem auto;
   gap: 2rem;
 
   .thumb-box {
@@ -366,6 +365,23 @@ hr {
     .paragraph {
       color: $color-secondary;
     }
+  }
+}
+
+@media (min-width: $mobile-responsive-breakpoint) {
+  .about-card {
+    grid-template-columns: 14rem auto;
+  }
+}
+
+@media (max-width: $mobile-responsive-breakpoint) {
+  .about-card {
+    height: 30rem;
+    grid-template-rows: 14rem auto;
+  }
+
+  .thumb-box {
+    place-self: center;
   }
 }
 
