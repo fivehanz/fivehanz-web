@@ -206,11 +206,10 @@ hr {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
   }
 
   .projects-item {
-    margin: 4rem 0;
+    margin: 4rem 1rem;
   }
 
   .projects-heading {
@@ -241,9 +240,7 @@ hr {
 }
 
 .card {
-  width: 35rem;
   display: grid;
-  grid-template-columns: 16rem auto;
   gap: 2rem;
 
   .thumb-box {
@@ -275,6 +272,24 @@ hr {
 
     .paragraph {
       color: $color-secondary;
+    }
+  }
+}
+
+@media (min-width: $mobile-responsive-breakpoint) {
+  .card {
+    width: 35rem;
+    grid-template-columns: 16rem auto;
+  }
+}
+
+@media (max-width: $mobile-responsive-breakpoint) {
+  .card {
+    height: 35rem;
+    grid-template-rows: 16rem auto;
+
+    .thumb-box {
+      width: auto;
     }
   }
 }
