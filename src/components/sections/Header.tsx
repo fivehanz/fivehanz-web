@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Brand from "./Brand";
+import Brand from "../components/Brand";
 
 const Header = () => {
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
