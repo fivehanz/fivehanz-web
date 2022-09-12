@@ -5,7 +5,7 @@ const Hero = () => {
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.25 }}
+      transition={{ duration: 0.5 }}
     >
       <section className="hero container">
         <h1 className="hero-text">front-end engineer</h1>

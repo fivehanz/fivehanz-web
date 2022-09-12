@@ -1,4 +1,5 @@
-const Card = () => {
+const Card = (props: Project) => {
+  const { name, subtitle, description } = props;
   return (
     <div className="card">
       <div className="thumb-box">
@@ -7,16 +8,11 @@ const Card = () => {
 
       <div className="card-desc">
         <div className="titles">
-          <h2 className="title">project name</h2>
-          <h3 className="subtitle">few lines of project subtitle</h3>
+          <h2 className="title">{name}</h2>
+          <h3 className="subtitle">{subtitle}</h3>
         </div>
 
-        <p className="paragraph">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem velit
-          neque asperiores quam maiores sit voluptate itaque similique sint
-          voluptatibus rem obcaecati, ea nulla nam quaerat doloremque nihil
-          dolores ut.
-        </p>
+        <p className="paragraph">{description}</p>
 
         <div className="cta">CTA</div>
       </div>
