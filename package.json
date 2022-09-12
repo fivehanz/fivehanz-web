@@ -8,9 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && next lint",
-    "postbuild": "next-sitemap --config next-sitemap.config.js"
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
+    "framer-motion": "^7.3.2",
     "next": "12.2.5",
     "next-seo": "^5.5.0",
     "react": "18.2.0",
@@ -20,6 +22,7 @@
     "@types/node": "18.7.14",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
+    "cypress": "^10.7.0",
     "eslint": "^8.23.0",
     "eslint-config-next": "12.2.5",
     "next-sitemap": "^3.1.21",

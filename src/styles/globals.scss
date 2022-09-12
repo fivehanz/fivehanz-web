@@ -15,9 +15,12 @@ $fs-hero-mobile: 2.25rem;
 $fs-brand: 2.25rem;
 $fs-nav: 1.15rem;
 
-$color-primary: rgb(0, 0, 0);
-$color-secondary: rgba(128, 128, 128, 1);
-$color-thumb-box: rgb(248, 248, 248);
+$color-body: rgba(255, 227, 224, 0.5);
+$color-primary: hsl(7, 83, 63);
+$color-secondary: rgba(243, 134, 119, 0.8);
+$color-secondary-2: hsl(7, 89, 86);
+$color-tags: rgba(255, 227, 224, 1);
+$color-thumb-box: hsl(7, 89, 86);
 
 $mobile-responsive-breakpoint: 34.375rem;
 
@@ -49,10 +52,11 @@ a:hover {
 
 body {
   font-family: "Manrope", sans-serif;
+  background-color: $color-body;
 }
 
 hr {
-  background: rgba(231, 231, 231, 0.5);
+  background: $color-secondary-2;
   padding: 1px;
   margin: 1rem auto;
 }
@@ -161,6 +165,7 @@ hr {
 .brand {
   font-size: $fs-brand;
   font-weight: $fw-extrabold;
+  color: $color-primary;
 }
 
 /* hero */
@@ -170,12 +175,13 @@ hr {
   justify-content: center;
   align-items: center;
 
-  height: 85vh;
+  height: 80vh;
 
   .hero-text {
     font-family: "DotGothic16", sans-serif;
     font-size: $fs-hero;
     font-weight: $fw-regular;
+    color: $color-primary;
 
     position: relative;
   }
@@ -188,6 +194,8 @@ hr {
     right: 0;
     height: 0.35rem;
     width: 2.5rem;
+
+    background-color: $color-primary;
   }
 
   @media (max-width: $mobile-responsive-breakpoint) {
@@ -215,6 +223,7 @@ hr {
   .projects-heading {
     display: flex;
     flex-direction: row-reverse;
+    color: $color-primary;
 
     .projects-text {
       font-size: $fs-heading;
@@ -230,7 +239,7 @@ hr {
       position: absolute;
 
       content: "";
-      background: rgb(0, 0, 0);
+      background-color: $color-primary;
       bottom: 0;
       right: 0.8rem;
       height: 0.35rem;
@@ -247,12 +256,34 @@ hr {
     width: 16rem;
     height: 16rem;
     background: $color-thumb-box;
+
+    position: relative;
+  }
+
+  .tags {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    .tag {
+      padding: 0.25rem 0.5rem;
+      color: $color-primary;
+      background-color: $color-tags;
+      margin: 0.25rem 0.25rem;
+      border-radius: 1rem;
+      font-size: small;
+      font-weight: $fw-bold;
+    }
   }
 
   .card-desc {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    color: $color-primary;
 
     .titles {
       display: flex;
@@ -267,12 +298,18 @@ hr {
 
       .subtitle {
         font-size: 1rem;
+        font-weight: $fw-bold;
       }
     }
 
     .paragraph {
       color: $color-secondary;
     }
+  }
+
+  .cta {
+    padding: 0.5rem;
+    background-color: #fff;
   }
 }
 
@@ -302,6 +339,7 @@ hr {
   .about-heading {
     display: flex;
     flex-direction: row;
+    color: $color-primary;
 
     .about-text {
       font-size: $fs-heading;
@@ -317,7 +355,7 @@ hr {
       position: absolute;
 
       content: "";
-      background: rgb(0, 0, 0);
+      background-color: $color-primary;
       bottom: 0;
       left: 0.8rem;
       height: 0.35rem;
@@ -350,6 +388,7 @@ hr {
     flex-direction: column;
     justify-content: space-around;
     line-height: 1.5;
+    color: $color-primary;
 
     .titles {
       display: flex;
@@ -393,6 +432,7 @@ hr {
   .contact-heading {
     display: flex;
     flex-direction: row-reverse;
+    color: $color-primary;
 
     .contact-text {
       font-size: $fs-heading;
@@ -408,7 +448,7 @@ hr {
       position: absolute;
 
       content: "";
-      background: rgb(0, 0, 0);
+      background-color: $color-primary;
       bottom: 0;
       right: 0.8rem;
 
@@ -441,4 +481,16 @@ footer.footer {
   height: 10vh;
   font-size: 2rem;
   color: $color-secondary;
+}
+
+/* progress bar */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.4rem;
+  background: $color-primary;
+  transform-origin: 0%;
 }
