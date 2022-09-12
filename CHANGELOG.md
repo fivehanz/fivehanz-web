@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.4.0](https://github.com/fivehanz/fivehanz-web/compare/v0.3.0...v0.4.0) (2022-09-12)
+
+
+### Features
+
+* changed colorscheme ([f0c3ec3](https://github.com/fivehanz/fivehanz-web/commit/f0c3ec369f4252c91b7e45a92289b0f394b32529))
+* framer motion to scrollbar@top ([84929b9](https://github.com/fivehanz/fivehanz-web/commit/84929b917cd49c868570b6d050fadb96d1c77030))
+* tags ([1b090c9](https://github.com/fivehanz/fivehanz-web/commit/1b090c9dee757b488f9e7d41c4e5a86e3f68880e))
+
+
+### Bug Fixes
+
+* body bg alpha rasied to 0.5 ([ff20837](https://github.com/fivehanz/fivehanz-web/commit/ff20837b6fe135b0b3f1075e174a462df165894c))
+* change h2 to h1 in hero ([003a5fd](https://github.com/fivehanz/fivehanz-web/commit/003a5fdad08bf69f10b9318e08df2ea5624a710a))
+* colorscheme on linebreak ([9e0df8d](https://github.com/fivehanz/fivehanz-web/commit/9e0df8d1443788cd7b78c243d1035bd774c70ebf))
+
 ## [0.3.0](https://github.com/fivehanz/fivehanz-web/compare/v0.2.0...v0.3.0) (2022-09-11)
 
 
