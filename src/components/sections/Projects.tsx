@@ -7,6 +7,17 @@ const data: Project[] = [
     subtitle: "few lines of some descriptive subtitle",
     description:
       "Lorem ipsum dolor. Praesentium eaque placeat eius, accusamus esse, laudantium qui, suscipit odit alias nesciunt velit?",
+    tags: [
+      { id: 1, name: "nextjs" },
+      { id: 2, name: "ethersjs" },
+      { id: 3, name: "scss" },
+      { id: 4, name: "solana" },
+      {
+        id: 5,
+        name: "polygon",
+      },
+      { id: 6, name: "zksync" },
+    ],
   },
   {
     id: 2,
@@ -14,6 +25,7 @@ const data: Project[] = [
     subtitle: "few lines of some descriptive subtitle",
     description:
       "Lorem ipsum dolor. Praesentium eaque placeat eius, accusamus esse, laudantium qui, suscipit odit alias nesciunt velit?",
+    tags: [{ id: 1, name: "nextjs" }],
   },
   {
     id: 3,
@@ -21,20 +33,7 @@ const data: Project[] = [
     subtitle: "few lines of some descriptive subtitle",
     description:
       "Lorem ipsum dolor. Praesentium eaque placeat eius, accusamus esse, laudantium qui, suscipit odit alias nesciunt velit?",
-  },
-  {
-    id: 4,
-    name: "project name 4",
-    subtitle: "few lines of some descriptive subtitle",
-    description:
-      "Lorem ipsum dolor. Praesentium eaque placeat eius, accusamus esse, laudantium qui, suscipit odit alias nesciunt velit?",
-  },
-  {
-    id: 5,
-    name: "project name 5",
-    subtitle: "few lines of some descriptive subtitle",
-    description:
-      "Lorem ipsum dolor. Praesentium eaque placeat eius, accusamus esse, laudantium qui, suscipit odit alias nesciunt velit?",
+    tags: [{ id: 1, name: "nextjs" }],
   },
 ];
 

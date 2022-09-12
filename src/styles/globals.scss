@@ -19,6 +19,7 @@ $color-body: rgba(255, 227, 224, 0.5);
 $color-primary: hsl(7, 83, 63);
 $color-secondary: rgba(243, 134, 119, 0.8);
 $color-secondary-2: hsl(7, 89, 86);
+$color-tags: rgba(255, 227, 224, 1);
 $color-thumb-box: hsl(7, 89, 86);
 
 $mobile-responsive-breakpoint: 34.375rem;
@@ -255,6 +256,27 @@ hr {
     width: 16rem;
     height: 16rem;
     background: $color-thumb-box;
+
+    position: relative;
+  }
+
+  .tags {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    .tag {
+      padding: 0.25rem 0.5rem;
+      color: $color-primary;
+      background-color: $color-tags;
+      margin: 0.25rem 0.25rem;
+      border-radius: 1rem;
+      font-size: small;
+      font-weight: $fw-bold;
+    }
   }
 
   .card-desc {
@@ -283,6 +305,11 @@ hr {
     .paragraph {
       color: $color-secondary;
     }
+  }
+
+  .cta {
+    padding: 0.5rem;
+    background-color: #fff;
   }
 }
 
