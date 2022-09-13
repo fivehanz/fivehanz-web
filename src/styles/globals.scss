@@ -3,6 +3,7 @@
 /* variables */
 
 $desktop: 80rem;
+$mobile-responsive-breakpoint: 34.375rem;
 
 $fw-light: 300;
 $fw-regular: 400;
@@ -15,12 +16,6 @@ $fs-hero-mobile: 2.25rem;
 $fs-brand: 2.25rem;
 $fs-nav: 1.15rem;
 
-$dark-jungle-green: rgba(0, 21, 20, 1);
-$snow: rgba(251, 245, 243, 1);
-$fiery-rose: rgba(239, 98, 108, 1);
-$metallic-seaweed: rgba(31, 122, 140, 1);
-$usafa-blue: rgba(3, 83, 164, 1);
-
 // $color-body: rgba(255, 227, 224, 0.5);
 // $color-primary: hsl(7, 83, 63);
 // $color-secondary: rgba(243, 134, 119, 0.8);
@@ -28,16 +23,14 @@ $usafa-blue: rgba(3, 83, 164, 1);
 // $color-tags: rgba(255, 227, 224, 1);
 // $color-thumb-box: hsl(7, 89, 86);
 
-$color-primary: rgba(239, 98, 108, 0.85);
+$color-primary: rgba(239, 98, 108, 1);
 $color-secondary: rgba(251, 245, 243, 0.75);
-$color-secondary-2: rgba(239, 98, 108, 0.65);
+$color-secondary-2: rgba(239, 98, 108, 0.85);
 
 $color-body: rgba(0, 21, 20, 1);
 $color-thumb-box: rgba(3, 83, 164, 0.5);
 $color-tags: rgba(0, 21, 20, 0.65);
 $color-linebreak: rgba(3, 83, 164, 0.4);
-
-$mobile-responsive-breakpoint: 34.375rem;
 
 /* reset */
 
@@ -87,7 +80,7 @@ hr {
 /* header/nav */
 
 .header {
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   display: flex;
   justify-content: space-between;
