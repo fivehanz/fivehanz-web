@@ -1,5 +1,5 @@
 const Card = (props: Project) => {
-  const { name, subtitle, description, tags } = props;
+  const { name, subtitle, description, tags, links } = props;
   return (
     <div className="card">
       <div className="thumb-box">
@@ -21,7 +21,13 @@ const Card = (props: Project) => {
 
         <p className="paragraph">{description}</p>
 
-        <div className="cta">CTA</div>
+        <div className="cta-section">
+          {links.map((link: Link) => (
+            <a key={link.id} href={link.link} className="cta">
+              {link.title}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );

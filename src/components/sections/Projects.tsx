@@ -18,6 +18,7 @@ const data: Project[] = [
       },
       { id: 6, name: "zksync" },
     ],
+    links: [],
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ const data: Project[] = [
     description:
       "Lorem ipsum dolor. Praesentium eaque placeat eius, accusamus esse, laudantium qui, suscipit odit alias nesciunt velit?",
     tags: [{ id: 1, name: "nextjs" }],
+    links: [],
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const data: Project[] = [
     description:
       "Lorem ipsum dolor. Praesentium eaque placeat eius, accusamus esse, laudantium qui, suscipit odit alias nesciunt velit?",
     tags: [{ id: 1, name: "nextjs" }],
+    links: [],
   },
 ];
 
