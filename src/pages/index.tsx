@@ -1,5 +1,7 @@
-import type { NextPage } from "next";
+import Head from "next/head";
 import { motion, useScroll } from "framer-motion";
+
+import type { NextPage } from "next";
 
 import Contact from "../components/sections/Contact";
 import Footer from "../components/sections/Footer";
@@ -14,12 +16,17 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      <Head>
+        <title>fivehanz.xyz | Haniel</title>
+      </Head>
+
+      {/* progress bar on top */}
       <motion.div
         className="progress-bar"
         style={{ scaleX: scrollYProgress }}
       />
+
       <Header />
-      {/* <LineBreak /> */}
       <Hero />
       <LineBreak />
       <Projects />
@@ -27,7 +34,6 @@ const Home: NextPage = () => {
       <About />
       <LineBreak />
       <Contact />
-      {/* <LineBreak /> */}
       <Footer />
     </div>
   );
