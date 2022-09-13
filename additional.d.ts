@@ -1,16 +1,16 @@
 type Tag = {
-  id: number;
+  id: string;
   name: string;
 };
 
 type Link = {
-  id: number;
+  id: string;
   title: string;
   link: string;
 };
 
 type Project = {
-  id: number;
+  id: string;
   name: string;
   subtitle: string;
   description: string;
