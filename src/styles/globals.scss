@@ -15,12 +15,27 @@ $fs-hero-mobile: 2.25rem;
 $fs-brand: 2.25rem;
 $fs-nav: 1.15rem;
 
-$color-body: rgba(255, 227, 224, 0.5);
-$color-primary: hsl(7, 83, 63);
-$color-secondary: rgba(243, 134, 119, 0.8);
-$color-secondary-2: hsl(7, 89, 86);
-$color-tags: rgba(255, 227, 224, 1);
-$color-thumb-box: hsl(7, 89, 86);
+$dark-jungle-green: rgba(0, 21, 20, 1);
+$snow: rgba(251, 245, 243, 1);
+$fiery-rose: rgba(239, 98, 108, 1);
+$metallic-seaweed: rgba(31, 122, 140, 1);
+$usafa-blue: rgba(3, 83, 164, 1);
+
+// $color-body: rgba(255, 227, 224, 0.5);
+// $color-primary: hsl(7, 83, 63);
+// $color-secondary: rgba(243, 134, 119, 0.8);
+// $color-secondary-2: hsl(7, 89, 86);
+// $color-tags: rgba(255, 227, 224, 1);
+// $color-thumb-box: hsl(7, 89, 86);
+
+$color-primary: rgba(239, 98, 108, 0.85);
+$color-secondary: rgba(251, 245, 243, 0.75);
+$color-secondary-2: rgba(239, 98, 108, 0.65);
+
+$color-body: rgba(0, 21, 20, 1);
+$color-thumb-box: rgba(3, 83, 164, 0.5);
+$color-tags: rgba(0, 21, 20, 0.65);
+$color-linebreak: rgba(3, 83, 164, 0.4);
 
 $mobile-responsive-breakpoint: 34.375rem;
 
@@ -56,7 +71,7 @@ body {
 }
 
 hr {
-  background: $color-secondary-2;
+  background: $color-linebreak;
   padding: 1px;
   margin: 1rem auto;
 }
@@ -270,7 +285,7 @@ hr {
 
     .tag {
       padding: 0.25rem 0.5rem;
-      color: $color-primary;
+      color: $color-secondary;
       background-color: $color-tags;
       margin: 0.25rem 0.25rem;
       border-radius: 1rem;
@@ -283,7 +298,6 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    color: $color-primary;
 
     .titles {
       display: flex;
@@ -292,11 +306,13 @@ hr {
       line-height: 1.5;
 
       .title {
+        color: $color-primary;
         font-size: 1.25rem;
         font-weight: $fw-extrabold;
       }
 
       .subtitle {
+        color: $color-secondary-2;
         font-size: 1rem;
         font-weight: $fw-bold;
       }
@@ -309,7 +325,7 @@ hr {
 
   .cta {
     padding: 0.5rem;
-    background-color: #fff;
+    // background-color: #fff;
   }
 }
 
@@ -493,5 +509,5 @@ footer.footer {
   height: 0.4rem;
   background: $color-primary;
   transform-origin: 0%;
-  z-index: 999;
+  z-index: 99;
 }
