@@ -430,6 +430,18 @@ hr {
     .paragraph {
       color: $color-secondary;
     }
+
+    .social-icons {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.5rem;
+
+      .social-icon svg {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
   }
 }
 
@@ -441,11 +453,23 @@ hr {
 
 @media (max-width: $mobile-responsive-breakpoint) {
   .about-card {
-    height: 30rem;
+    height: 35rem;
     grid-template-rows: 14rem auto;
 
     .thumb-box {
       place-self: center;
+    }
+
+    .card-desc {
+      .social-icons {
+        justify-content: space-around;
+
+        .social-icon svg {
+          margin: 1.5rem 0;
+          height: 3rem;
+          width: 3rem;
+        }
+      }
     }
   }
 }

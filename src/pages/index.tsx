@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { motion, useScroll } from "framer-motion";
-import { ApolloQueryResult, gql } from "@apollo/client";
+import { gql } from "@apollo/client";
 import client from "../../apolloClient";
 
-import type { GetStaticProps, NextPage } from "next";
+import type { NextPage } from "next";
 
 import Contact from "../components/sections/Contact";
 import Footer from "../components/sections/Footer";
