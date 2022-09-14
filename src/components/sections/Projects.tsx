@@ -1,6 +1,6 @@
 import Card from "../components/Card";
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects }: any) => {
   return (
     <section className="projects container" id="projects">
       <div className="projects-heading">

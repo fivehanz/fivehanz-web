@@ -261,8 +261,8 @@ hr {
   gap: 2rem;
 
   .thumb-box {
-    width: 16rem;
-    height: 16rem;
+    width: 18rem;
+    height: 18rem;
     background: $color-thumb-box;
 
     position: relative;
@@ -274,7 +274,7 @@ hr {
     right: 0;
     display: flex;
     justify-content: flex-end;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 
     .tag {
       padding: 0.25rem 0.5rem;
@@ -284,6 +284,7 @@ hr {
       border-radius: 1rem;
       font-size: small;
       font-weight: $fw-bold;
+      text-align: center;
     }
   }
 
@@ -316,16 +317,31 @@ hr {
     }
   }
 
-  .cta {
-    padding: 0.5rem;
-    // background-color: #fff;
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+
+    .link {
+      padding: 0.35rem;
+      margin: 0.25rem;
+      background-color: $color-secondary-2;
+      color: $color-body;
+      border-radius: 0.25rem;
+      text-align: center;
+      font-weight: $fw-bold;
+    }
+
+    .link:hover,
+    .link:focus {
+      background-color: $color-primary;
+    }
   }
 }
 
 @media (min-width: $mobile-responsive-breakpoint) {
   .card {
-    width: 35rem;
-    grid-template-columns: 16rem auto;
+    width: 40rem;
+    grid-template-columns: 18rem auto;
   }
 }
 

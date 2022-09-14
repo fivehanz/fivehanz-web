@@ -21,9 +21,15 @@ const Card = (props: Project) => {
 
         <p className="paragraph">{description}</p>
 
-        <div className="cta-section">
+        <div className="links">
           {links.map((link: Link) => (
-            <a key={link.id} href={link.link} className="cta">
+            <a
+              key={link.id}
+              href={link.link}
+              className="link"
+              target="_blank"
+              rel="noreferrer"
+            >
               {link.title}
             </a>
           ))}
