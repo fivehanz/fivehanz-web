@@ -15,11 +15,11 @@ const Card = (props: Project) => {
 
       <div className="card-desc">
         <div className="titles">
-          <h2 className="title">{name}</h2>
-          <h3 className="subtitle">{subtitle}</h3>
+          <h2 className="title">{name || "title not provided"}</h2>
+          <h3 className="subtitle">{subtitle || "subtitle not provided"}</h3>
         </div>
 
-        <p className="paragraph">{description}</p>
+        <p className="paragraph">{description || "description not provided"}</p>
 
         <div className="links">
           {links.map((link: Link) => (
