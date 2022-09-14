@@ -1,7 +1,9 @@
 import Head from "next/head";
 import { motion, useScroll } from "framer-motion";
+import { ApolloQueryResult, gql } from "@apollo/client";
+import client from "../../apolloClient";
 
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 
 import Contact from "../components/sections/Contact";
 import Footer from "../components/sections/Footer";
@@ -11,7 +13,7 @@ import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
 import LineBreak from "../components/components/LineBreak";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ data }: any) => {
   const { scrollYProgress } = useScroll();
 
   return (
@@ -29,7 +31,7 @@ const Home: NextPage = () => {
       <Header />
       <Hero />
       <LineBreak />
-      <Projects />
+      <Projects projects={data.projects} />
       <LineBreak />
       <About />
       <LineBreak />
@@ -40,3 +42,33 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      {
+        projects {
+          id
+          name
+          subtitle
+          description
+          tags {
+            id
+            name
+          }
+          links {
+            id
+            link
+            title
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      data: data,
+    },
+  };
+}
