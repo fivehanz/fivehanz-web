@@ -26,7 +26,7 @@ const Card = (props: Project) => {
             <a
               key={link.id}
               href={link.link}
-              className="link"
+              className="link button"
               target="_blank"
               rel="noreferrer"
             >
