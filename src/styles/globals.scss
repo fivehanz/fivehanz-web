@@ -24,11 +24,13 @@ $fs-nav: 1.15rem;
 // $color-thumb-box: hsl(7, 89, 86);
 
 $color-primary: rgba(239, 98, 108, 1);
-$color-secondary: rgba(251, 245, 243, 0.75);
+$color-secondary: rgba(251, 245, 243, 0.85);
+$color-secondary-faded: rgba(251, 245, 243, 0.5);
 $color-secondary-2: rgba(239, 98, 108, 0.85);
 
 $color-body: rgba(0, 21, 20, 1);
 $color-thumb-box: rgba(3, 83, 164, 0.5);
+$color-contact-input: rgba(3, 83, 164, 0.5);
 $color-tags: rgba(0, 21, 20, 0.65);
 $color-linebreak: rgba(3, 83, 164, 0.4);
 
@@ -51,11 +53,6 @@ li {
 
 a {
   text-decoration: none;
-  color: $color-primary;
-}
-
-a:hover {
-  color: $color-secondary;
 }
 
 body {
@@ -77,6 +74,26 @@ hr {
   margin: 0 auto;
 }
 
+.button {
+  padding: 0.35rem;
+  border-radius: 0.25rem;
+  background-color: $color-secondary-2;
+  color: $color-body;
+
+  font-family: "Manrope", sans-serif;
+
+  cursor: pointer;
+}
+
+.button-lg {
+  padding: 0.6rem 1.2rem;
+}
+
+.button:hover,
+.button:focus {
+  background-color: $color-primary;
+}
+
 /* header/nav */
 
 .header {
@@ -96,6 +113,12 @@ hr {
       a {
         font-size: $fs-nav;
         font-weight: $fw-regular;
+        text-decoration: none;
+        color: $color-primary;
+      }
+
+      a:hover {
+        color: $color-secondary;
       }
     }
   }
@@ -323,18 +346,9 @@ hr {
     justify-content: flex-end;
 
     .link {
-      padding: 0.35rem;
       margin: 0.25rem;
-      background-color: $color-secondary-2;
-      color: $color-body;
-      border-radius: 0.25rem;
-      text-align: center;
-      font-weight: $fw-bold;
-    }
 
-    .link:hover,
-    .link:focus {
-      background-color: $color-primary;
+      font-weight: $fw-bold;
     }
   }
 }
@@ -390,6 +404,7 @@ hr {
   }
 
   .about-card-box {
+    padding: 2.5rem 0;
     margin: 4rem 1rem;
     display: flex;
     justify-content: center;
@@ -420,6 +435,7 @@ hr {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      margin-bottom: 0.5rem;
 
       .title {
         font-size: 1.5rem;
@@ -454,7 +470,7 @@ hr {
 
 @media (max-width: $mobile-responsive-breakpoint) {
   .about-card {
-    height: 35rem;
+    height: 40rem;
     grid-template-rows: 14rem auto;
 
     .thumb-box {
@@ -504,6 +520,60 @@ hr {
 
       height: 0.35rem;
       width: 3.5rem;
+    }
+  }
+
+  .contact-form-box {
+    padding: 2.5rem 0.5rem;
+
+    font-weight: $fw-bold;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: $color-primary;
+
+    .contact-form {
+      max-width: $mobile-responsive-breakpoint;
+      margin: 2rem auto;
+
+      .contact-item {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+
+        input,
+        textarea {
+          -webkit-appearance: none;
+          background-color: $color-contact-input;
+          color: $color-secondary;
+
+          margin: 1rem 0;
+          width: 100%;
+          padding: 0.8rem;
+
+          outline: none;
+          transition: border 0.25s;
+          border-radius: 0.2rem;
+        }
+
+        input:focus,
+        textarea:focus {
+          border-bottom: 0.1rem solid $color-primary;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+          color: $color-secondary-faded;
+        }
+
+        textarea {
+          height: 20rem;
+        }
+      }
+
+      .button {
+        font-size: 1.5rem;
+        font-weight: $fw-bold;
+      }
     }
   }
 }
