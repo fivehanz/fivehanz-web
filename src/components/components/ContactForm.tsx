@@ -5,7 +5,11 @@ const ContactForm = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_CONTACT_FORM!);
 
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    return (
+      <div className="contact-form-message">
+        <h2 className="success-message">Message sent successfully!</h2>
+      </div>
+    );
   }
 
   return (
