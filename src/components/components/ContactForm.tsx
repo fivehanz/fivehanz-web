@@ -1,4 +1,6 @@
 import { useForm, ValidationError } from "@formspree/react";
+import ReCAPTCHA from "react-google-recaptcha";
+
 const ContactForm = () => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_CONTACT_FORM!);
 
@@ -48,6 +50,14 @@ const ContactForm = () => {
             prefix="message"
             field="message"
             errors={state.errors}
+          />
+        </div>
+
+        <div className="contact-item">
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY!}
+            size="normal"
+            theme="dark"
           />
         </div>
 
