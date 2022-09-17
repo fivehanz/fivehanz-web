@@ -3,6 +3,7 @@
 /* variables */
 
 $desktop: 80rem;
+$mobile-responsive-breakpoint: 34.375rem;
 
 $fw-light: 300;
 $fw-regular: 400;
@@ -14,15 +15,26 @@ $fs-hero: 2.8125rem;
 $fs-hero-mobile: 2.25rem;
 $fs-brand: 2.25rem;
 $fs-nav: 1.15rem;
+$fs-mobile-nav: 1.6rem;
 
-$color-body: rgba(255, 227, 224, 0.5);
-$color-primary: hsl(7, 83, 63);
-$color-secondary: rgba(243, 134, 119, 0.8);
-$color-secondary-2: hsl(7, 89, 86);
-$color-tags: rgba(255, 227, 224, 1);
-$color-thumb-box: hsl(7, 89, 86);
+// $color-body: rgba(255, 227, 224, 0.5);
+// $color-primary: hsl(7, 83, 63);
+// $color-secondary: rgba(243, 134, 119, 0.8);
+// $color-secondary-2: hsl(7, 89, 86);
+// $color-tags: rgba(255, 227, 224, 1);
+// $color-thumb-box: hsl(7, 89, 86);
 
-$mobile-responsive-breakpoint: 34.375rem;
+$color-primary: rgba(239, 98, 108, 1);
+$color-secondary: rgba(251, 245, 243, 0.85);
+$color-secondary-faded: rgba(251, 245, 243, 0.5);
+$color-secondary-2: rgba(239, 98, 108, 0.85);
+
+$color-body: rgba(0, 21, 20, 1);
+$color-mobile-nav: rgba(239, 98, 108, 0.25);
+$color-thumb-box: rgba(3, 83, 164, 0.5);
+$color-contact-input: rgba(3, 83, 164, 0.5);
+$color-tags: rgba(0, 21, 20, 0.65);
+$color-linebreak: rgba(3, 83, 164, 0.4);
 
 /* reset */
 
@@ -43,11 +55,6 @@ li {
 
 a {
   text-decoration: none;
-  color: $color-primary;
-}
-
-a:hover {
-  color: $color-secondary;
 }
 
 body {
@@ -56,7 +63,7 @@ body {
 }
 
 hr {
-  background: $color-secondary-2;
+  background: $color-linebreak;
   padding: 1px;
   margin: 1rem auto;
 }
@@ -69,14 +76,36 @@ hr {
   margin: 0 auto;
 }
 
+.button {
+  padding: 0.35rem;
+  border-radius: 0.25rem;
+  background-color: $color-secondary-2;
+  color: $color-body;
+
+  font-family: "Manrope", sans-serif;
+
+  cursor: pointer;
+}
+
+.button-lg {
+  padding: 0.6rem 1.2rem;
+}
+
+.button:hover,
+.button:focus {
+  background-color: $color-primary;
+}
+
 /* header/nav */
 
 .header {
-  margin-top: 2rem;
+  margin-top: 1rem;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .nav-list {
     display: flex;
@@ -88,35 +117,103 @@ hr {
       a {
         font-size: $fs-nav;
         font-weight: $fw-regular;
+        text-decoration: none;
+        color: $color-primary;
+      }
+
+      a:hover {
+        color: $color-secondary;
       }
     }
   }
 
   .burger-menu {
-    height: 2rem;
-    // width: 2rem;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    height: 2.25rem;
+    width: 2.25rem;
+    position: relative;
     cursor: pointer;
+    z-index: 1;
+
+    div {
+      margin: 0.5rem auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+
+      .burger-bar {
+        background-color: $color-primary;
+
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2.5px;
+
+        border-radius: 1px;
+        transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+
+        &:first-of-type {
+          top: 0;
+        }
+        &:last-of-type {
+          bottom: 0;
+        }
+
+        &.clicked,
+        span {
+          &:first-of-type {
+            transform: rotate(45deg);
+            top: 0.55rem;
+          }
+
+          &:last-of-type {
+            transform: rotate(-45deg);
+            bottom: 0.55rem;
+          }
+        }
+      }
+    }
   }
 
-  .burger-bar {
-    width: 2.5rem;
-    height: 0.35rem;
-    background-color: $color-primary;
-    border-radius: 0.5rem;
-  }
-
-  .nav-menu {
-    width: 100%;
-    height: 80vh;
-    background-color: $color-secondary;
+  .mobile-nav {
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     top: 0;
-    z-index: -1;
+    z-index: 1;
+
+    backdrop-filter: blur(16px) saturate(100%);
+    -webkit-backdrop-filter: blur(16px) saturate(100%);
+    background-color: $color-mobile-nav;
+
+    .links {
+      margin-top: 5rem;
+      // height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      text-align: center;
+
+      .link > a {
+        display: block;
+
+        margin: 0.5rem;
+        padding: 0.8rem;
+
+        border: 1px solid $color-primary;
+
+        font-weight: $fw-bold;
+        font-size: $fs-mobile-nav;
+        color: $color-primary;
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: $color-secondary;
+        }
+      }
+    }
   }
 
   .hidden {
@@ -138,28 +235,6 @@ hr {
       display: none;
     }
   }
-
-  /* animation */
-
-  .burger-bar.clicked:nth-child(1) {
-    transform: rotate(45deg) translate(0.2em, 1em);
-    transition: ease-out 0.35s;
-  }
-
-  .burger-bar.clicked:nth-child(2) {
-    transform: scale(0.01);
-    transition: ease-out 0.1s;
-  }
-
-  .burger-bar.clicked:nth-child(3) {
-    transform: rotate(135deg) translate(-0.2em, 1em);
-    transition: ease-out 0.35s;
-  }
-
-  .burger-bar.unclicked {
-    transform: rotate(0) translate(0);
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
-  }
 }
 
 .brand {
@@ -175,7 +250,7 @@ hr {
   justify-content: center;
   align-items: center;
 
-  height: 80vh;
+  height: 90vh;
 
   .hero-text {
     font-family: "DotGothic16", sans-serif;
@@ -266,16 +341,17 @@ hr {
     right: 0;
     display: flex;
     justify-content: flex-end;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 
     .tag {
       padding: 0.25rem 0.5rem;
-      color: $color-primary;
+      color: $color-secondary;
       background-color: $color-tags;
       margin: 0.25rem 0.25rem;
       border-radius: 1rem;
       font-size: small;
       font-weight: $fw-bold;
+      text-align: center;
     }
   }
 
@@ -283,7 +359,6 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    color: $color-primary;
 
     .titles {
       display: flex;
@@ -292,11 +367,13 @@ hr {
       line-height: 1.5;
 
       .title {
+        color: $color-primary;
         font-size: 1.25rem;
         font-weight: $fw-extrabold;
       }
 
       .subtitle {
+        color: $color-secondary-2;
         font-size: 1rem;
         font-weight: $fw-bold;
       }
@@ -307,9 +384,16 @@ hr {
     }
   }
 
-  .cta {
-    padding: 0.5rem;
-    background-color: #fff;
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    .link {
+      margin: 0.25rem;
+
+      font-weight: $fw-bold;
+    }
   }
 }
 
@@ -326,7 +410,7 @@ hr {
     grid-template-rows: 16rem auto;
 
     .thumb-box {
-      width: auto;
+      min-width: 92vw;
     }
   }
 }
@@ -364,6 +448,7 @@ hr {
   }
 
   .about-card-box {
+    padding: 2.5rem 0;
     margin: 4rem 1rem;
     display: flex;
     justify-content: center;
@@ -394,6 +479,7 @@ hr {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      margin-bottom: 0.5rem;
 
       .title {
         font-size: 1.5rem;
@@ -403,6 +489,20 @@ hr {
 
     .paragraph {
       color: $color-secondary;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+
+      .social-icon svg {
+        height: 2.5rem;
+        width: 2.5rem;
+        color: $color-primary;
+      }
     }
   }
 }
@@ -415,11 +515,22 @@ hr {
 
 @media (max-width: $mobile-responsive-breakpoint) {
   .about-card {
-    height: 30rem;
+    height: 40rem;
     grid-template-rows: 14rem auto;
 
     .thumb-box {
       place-self: center;
+    }
+
+    .card-desc {
+      .social-icons {
+        justify-content: space-around;
+
+        .social-icon svg {
+          height: 3rem;
+          width: 3rem;
+        }
+      }
     }
   }
 }
@@ -454,6 +565,73 @@ hr {
 
       height: 0.35rem;
       width: 3.5rem;
+    }
+  }
+
+  .contact-form-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+
+    .success-message {
+      color: $color-secondary;
+      font-weight: $fw-bold;
+      font-size: 1.5rem;
+    }
+  }
+
+  .contact-form-box {
+    padding: 2.5rem 0.5rem;
+
+    font-weight: $fw-bold;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: $color-primary;
+
+    .contact-form {
+      max-width: $mobile-responsive-breakpoint;
+      margin: 2rem auto;
+
+      .contact-item {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+
+        input,
+        textarea {
+          -webkit-appearance: none;
+          background-color: $color-contact-input;
+          color: $color-secondary;
+
+          margin: 1rem 0;
+          width: 100%;
+          padding: 0.8rem;
+
+          outline: none;
+          transition: border 0.25s;
+          border-radius: 0.2rem;
+        }
+
+        input:focus,
+        textarea:focus {
+          border-bottom: 0.1rem solid $color-primary;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+          color: $color-secondary-faded;
+        }
+
+        textarea {
+          height: 20rem;
+        }
+      }
+
+      .button {
+        font-size: 1.5rem;
+        font-weight: $fw-bold;
+      }
     }
   }
 }
@@ -493,4 +671,57 @@ footer.footer {
   height: 0.4rem;
   background: $color-primary;
   transform-origin: 0%;
+  z-index: 99;
+}
+
+/* go to top btn */
+
+.top-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .top-btn {
+    font-size: 2.4rem;
+    color: $color-secondary;
+
+    width: 4rem;
+    height: 4rem;
+
+    background-color: $color-secondary-2;
+    box-shadow: $color-primary;
+    border-radius: 50%;
+
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &-icon {
+      animation: gototop 1s linear infinite alternate-reverse;
+    }
+
+    @keyframes gototop {
+      0% {
+        transform: translateY(-0.35rem);
+      }
+      100% {
+        transform: translateY(0.35rem);
+      }
+    }
+  }
+
+  @media (max-width: $mobile-responsive-breakpoint) {
+    .top-btn {
+      right: 2rem;
+      bottom: 2rem;
+    }
+  }
 }

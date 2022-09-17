@@ -1,53 +1,64 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Brand from "../components/Brand";
+import BurgerMenu from "../components/BurgerMenu";
+import DesktopNav from "../components/DesktopNav";
+import MobileNav from "../components/MobileNav";
+import Navbar from "../components/Navbar";
+
+const navLinks: Link[] = [
+  { id: "1", title: "home", link: "#home" },
+  { id: "2", title: "projects", link: "#projects" },
+  { id: "3", title: "about", link: "#about" },
+  { id: "4", title: "contact", link: "#contact" },
+  // { id: "5", title: "devBlog", link: "https://blog.fivehanz.xyz" },
+];
 
 const Header = () => {
+  const [mobileNavClass, setMobileNavClass] = useState("mobile-nav hidden");
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
-  const [mobileMenuClass, setMobileMenuClass] = useState("nav-menu hidden");
-  const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const [isBurgerClicked, setIsBurgerClicked] = useState(false);
 
-  const updateMenu = () => {
-    if (!isMenuClicked) {
+  const toggleBurgerClass = () => {
+    if (!isBurgerClicked) {
       setBurgerClass("burger-bar clicked");
-      setMobileMenuClass("nav-menu visible");
     } else {
       setBurgerClass("burger-bar unclicked");
-      setMobileMenuClass("nav-menu hidden");
     }
 
-    setIsMenuClicked(!isMenuClicked);
+    setIsBurgerClicked(!isBurgerClicked);
+  };
+
+  const handleClick = () => {
+    if (!isMobileNavOpen) {
+      setMobileNavClass("mobile-nav visible");
+    } else {
+      setMobileNavClass("mobile-nav hidden");
+    }
+
+    toggleBurgerClass();
+    setIsMobileNavOpen(() => !isMobileNavOpen);
   };
 
   return (
-    <header className="header container">
-      <Brand />
-      <nav>
-        {/* mobile nav */}
-        <div className="burger-menu" onClick={updateMenu}>
-          <div className={burgerClass}></div>
-          <div className={burgerClass}></div>
-          <div className={burgerClass}></div>
-        </div>
+    <div className="header">
+      <MobileNav
+        navLinks={navLinks}
+        mobileNavClass={mobileNavClass}
+        handleClick={handleClick}
+      />
+      <header className="container">
+        <Brand />
 
-        {/* <div className={mobileMenuClass}></div> */}
-
-        {/* desktop / tablet nav */}
-        <ul className="nav-list">
-          <li className="nav-list-item">
-            <a href="#home">home </a>
-          </li>
-          <li className="nav-list-item">
-            <a href="#projects">projects </a>
-          </li>
-          <li className="nav-list-item">
-            <a href="#about">about </a>
-          </li>
-          <li className="nav-list-item">
-            <a href="#contact">contact </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+        <Navbar
+          BurgerMenu={BurgerMenu}
+          burgerClass={burgerClass}
+          handleClick={handleClick}
+          DesktopNav={DesktopNav}
+          navLinks={navLinks}
+        />
+      </header>
+    </div>
   );
 };
 
