@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Brand from "../components/Brand";
-import BurgerMenu from "../components/BurgerMenu";
-import DesktopNav from "../components/DesktopNav";
-import MobileNav from "../components/MobileNav";
-import Navbar from "../components/Navbar";
+import Brand from "../blocks/Brand";
+import BurgerMenu from "../blocks/BurgerMenu";
+import DesktopNav from "../blocks/DesktopNav";
+import MobileNav from "../blocks/MobileNav";
+import Navbar from "../blocks/Navbar";
 
 const navLinks: Link[] = [
   { id: "1", title: "home", link: "#home" },

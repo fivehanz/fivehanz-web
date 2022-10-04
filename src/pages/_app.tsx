@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
 import type { AppProps } from "next/app";
-import GoToTop from "../components/components/GoToTop";
+import GoToTop from "../components/blocks/GoToTop";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

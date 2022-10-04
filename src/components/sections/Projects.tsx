@@ -1,4 +1,4 @@
-import Card from "../components/Card";
+import Card from "../blocks/Card";
 
 const Projects = ({ projects }: any) => {
   return (

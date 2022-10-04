@@ -1,4 +1,4 @@
-import AboutCard from "../components/AboutCard";
+import AboutCard from "../blocks/AboutCard";
 
 const About = () => {
   return (

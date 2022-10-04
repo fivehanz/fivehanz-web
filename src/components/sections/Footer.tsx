@@ -1,4 +1,4 @@
-import Brand from "../components/Brand";
+import Brand from "../blocks/Brand";
 
 const Footer = () => {
   return (

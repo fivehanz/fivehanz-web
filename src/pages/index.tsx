@@ -11,7 +11,7 @@ import Header from "../components/sections/Header";
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
-import LineBreak from "../components/components/LineBreak";
+import LineBreak from "../components/blocks/LineBreak";
 
 const Home: NextPage = ({ data }: any) => {
   const { scrollYProgress } = useScroll();
