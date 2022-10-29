@@ -7,10 +7,10 @@ import Navbar from "../components/Navbar";
 
 const navLinks: Link[] = [
   { id: "1", title: "home", link: "#home" },
+  { id: "5", title: "devBlog", link: "https://blog.fivehanz.xyz" },
   { id: "2", title: "projects", link: "#projects" },
   { id: "3", title: "about", link: "#about" },
   { id: "4", title: "contact", link: "#contact" },
-  // { id: "5", title: "devBlog", link: "https://blog.fivehanz.xyz" },
 ];
 
 const Header = () => {
