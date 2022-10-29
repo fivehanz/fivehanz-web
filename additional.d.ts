@@ -7,6 +7,7 @@ type Link = {
   id: string;
   title: string;
   link: string;
+  external: boolean;
 };
 
 type Project = {

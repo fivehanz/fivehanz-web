@@ -5,7 +5,13 @@ const DesktopNav = ({ navLinks }) => {
         {navLinks.map((link) => {
           return (
             <li key={link.id} className="nav-list-item">
-              <a href={link.link}>{link.title}</a>
+              {link.external ? (
+                <a href={link.link} target="_blank" rel="noreferrer">
+                  {link.title}
+                </a>
+              ) : (
+                <a href={link.link}>{link.title}</a>
+              )}
             </li>
           );
         })}

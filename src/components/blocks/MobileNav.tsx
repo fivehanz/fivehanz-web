@@ -5,9 +5,20 @@ const MobileNav = ({ navLinks, mobileNavClass, handleClick }) => {
         {navLinks.map((link) => {
           return (
             <div key={link.id} className="link">
-              <a href={link.link} onClick={handleClick}>
-                {link.title}
-              </a>
+              {link.external ? (
+                <a
+                  href={link.link}
+                  onClick={handleClick}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {link.title}
+                </a>
+              ) : (
+                <a href={link.link} onClick={handleClick}>
+                  {link.title}
+                </a>
+              )}
             </div>
           );
         })}
