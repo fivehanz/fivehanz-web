@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/fivehanz/fivehanz-web/compare/v0.5.0...v0.6.0) (2022-11-01)
+
+
+### Features
+
+* change hero and remove cypress ([3f6f37f](https://github.com/fivehanz/fivehanz-web/commit/3f6f37fa9b4aefbde5c004a91a6def5c84dd2e4a))
+
 ## [0.5.0](https://github.com/fivehanz/fivehanz-web/compare/v0.4.0...v0.5.0) (2022-09-17)
 
 
