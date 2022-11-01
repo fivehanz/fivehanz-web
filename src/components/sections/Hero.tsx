@@ -8,7 +8,7 @@ const Hero = () => {
       transition={{ duration: 0.5 }}
     >
       <section className="hero container">
-        <h1 className="hero-text">front-end engineer</h1>
+        <h1 className="hero-text">software engineer</h1>
       </section>
     </motion.div>
   );
