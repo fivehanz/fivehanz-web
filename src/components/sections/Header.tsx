@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AppBar } from "@mui/material";
+import { AppBar, Box, Toolbar } from "@mui/material";
 import Brand from "../blocks/Brand";
 import BurgerMenu from "../blocks/BurgerMenu";
 import DesktopNav from "../blocks/DesktopNav";
@@ -57,18 +57,40 @@ const Header = () => {
   return (
     <header className="container">
       <AppBar position="static">
-        <Brand />
-
-        {/* <Navbar
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Brand />
+          <Box
+            sx={{
+              display: "flex",
+              gap: "1rem",
+              "@media (max-width: 34.375rem)": { display: "none" },
+            }}
+          >
+            {navLinks.map((link) => {
+              return (
+                <li key={link.id}>
+                  {link.external ? (
+                    <a href={link.link} target="_blank" rel="noreferrer">
+                      {link.title}
+                    </a>
+                  ) : (
+                    <a href={link.link}>{link.title}</a>
+                  )}
+                </li>
+              );
+            })}
+          </Box>
+        </Toolbar>
+      </AppBar>
+      {/* <Navbar
           BurgerMenu={BurgerMenu}
           burgerClass={burgerClass}
           handleClick={handleClick}
           DesktopNav={DesktopNav}
           navLinks={navLinks}
-        /> */}
-      </AppBar>
+        /> 
+    </div> */}
     </header>
-    // </div>
   );
 };
 

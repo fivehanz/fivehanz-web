@@ -1,4 +1,4 @@
-import ContactForm from "../blocks/ContactForm";
+// import ContactForm from "../blocks/ContactForm";
 
 const Contact = () => {
   return (
@@ -6,7 +6,7 @@ const Contact = () => {
       <div className="contact-heading">
         <h2 className="contact-text">contact</h2>
       </div>
-      <ContactForm />
+      {/* <ContactForm /> */}
     </section>
   );
 };

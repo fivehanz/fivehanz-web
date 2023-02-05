@@ -1,5 +1,7 @@
+import { Typography } from "@mui/material";
+
 const Brand = () => {
-  return <h2 className="brand">fivehanz.</h2>;
+  return <Typography className="brand">fivehanz.</Typography>;
 };
 
 export default Brand;
