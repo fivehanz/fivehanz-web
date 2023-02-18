@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.10.5",
     "@formspree/react": "^2.4.0",
     "@icons-pack/react-simple-icons": "^5.5.0",
+    "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.10.11",
     "framer-motion": "^7.3.2",
     "graphql": "^16.6.0",
