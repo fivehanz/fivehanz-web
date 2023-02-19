@@ -25,7 +25,7 @@ const Card = (props: Project) => {
           {links.map((link: Link) => (
             <a
               key={link.id}
-              href={link.link}
+              href={link.href}
               className="link button"
               target="_blank"
               rel="noreferrer"

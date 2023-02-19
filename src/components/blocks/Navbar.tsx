@@ -1,15 +1,66 @@
-const Navbar = ({
-  BurgerMenu,
-  burgerClass,
-  handleClick,
-  DesktopNav,
-  navLinks,
-}) => {
+import { AppBar, Box, Toolbar, IconButton, Link } from "@mui/material";
+import Brand from "./Brand";
+import HamburgerButton from "./HamburgerButton";
+
+const Navbar = ({ toggleMobileNav, isMobileNavOpen, navLinks }) => {
   return (
-    <div className="navbar">
-      <BurgerMenu handleClick={handleClick} burgerClass={burgerClass} />
-      <DesktopNav navLinks={navLinks} />
-    </div>
+    <Box>
+      <AppBar position="static">
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Brand />
+
+          <HamburgerButton
+            toggleMobileNav={toggleMobileNav}
+            isMobileNavOpen={isMobileNavOpen}
+          />
+
+          {/* desktop menu */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "1rem",
+              "@media (max-width:34.375rem)": { display: "none" },
+            }}
+          >
+            {navLinks.map((item: Link) =>
+              item.external ? (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  underline="hover"
+                  sx={{
+                    color: "white",
+                  }}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {item.title}
+                </Link>
+              ) : (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  underline="hover"
+                  sx={{
+                    color: "white",
+                  }}
+                >
+                  {item.title}
+                </Link>
+              )
+            )}
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };
 

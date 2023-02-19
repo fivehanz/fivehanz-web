@@ -6,7 +6,7 @@ type Tag = {
 type Link = {
   id: string;
   title: string;
-  link: string;
+  href: string;
   external: boolean;
 };
 
