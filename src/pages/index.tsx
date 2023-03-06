@@ -2,7 +2,6 @@ import Head from "next/head";
 import { motion, useScroll } from "framer-motion";
 import { gql } from "@apollo/client";
 import client from "../../apolloClient";
-
 import type { NextPage } from "next";
 
 import Contact from "../components/sections/Contact";
@@ -12,12 +11,13 @@ import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
 import LineBreak from "../components/blocks/LineBreak";
+import { Box } from "@mui/material";
 
 const Home: NextPage = ({ data }: any) => {
   const { scrollYProgress } = useScroll();
 
   return (
-    <div>
+    <Box sx={{ fontFamily: "Manrope, sans-serif" }}>
       <Head>
         <title>fivehanz.xyz | Haniel</title>
         <link
@@ -56,7 +56,7 @@ const Home: NextPage = ({ data }: any) => {
       <LineBreak />
       <Contact />
       <Footer />
-    </div>
+    </Box>
   );
 };
 
