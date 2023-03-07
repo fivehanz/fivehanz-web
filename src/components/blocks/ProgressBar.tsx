@@ -1,8 +1,9 @@
 import React from "react";
-import { Box, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material";
 import { motion, useScroll } from "framer-motion";
 import MuiBox, { BoxProps } from "@mui/material/Box";
 
+//@ts-nocheck
 const BoxComponent = React.forwardRef((props: BoxProps, ref) => (
   <MuiBox {...props} ref={ref} />
 ));
