@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/fivehanz/fivehanz-web/compare/v0.6.0...v0.6.1) (2023-03-07)
+
+
+### Bug Fixes
+
+* merge conflict residue ([7c18c43](https://github.com/fivehanz/fivehanz-web/commit/7c18c432dd9631cf43623df1d4bd07a103bc7e6b))
+
 ## [0.6.0](https://github.com/fivehanz/fivehanz-web/compare/v0.5.0...v0.6.0) (2022-11-01)
 
 
