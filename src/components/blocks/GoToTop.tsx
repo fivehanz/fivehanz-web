@@ -1,8 +1,11 @@
+import { useTheme, Box, useMediaQuery } from "@mui/material";
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 
 const GoToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const theme = useTheme();
+  const isSmallMediaQuery = useMediaQuery(theme.breakpoints.down("sm"));
 
   const goToTop = () => {
     window.scrollTo({
@@ -26,13 +29,47 @@ const GoToTop = () => {
   }, []);
 
   return (
-    <div className="top-btn-wrapper">
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+      }}
+    >
       {isVisible && (
-        <div className="top-btn" onClick={goToTop}>
-          <FaArrowUp className="top-btn-icon" />
-        </div>
+        <Box
+          onClick={goToTop}
+          sx={{
+            fontSize: "2.4rem",
+            color: theme.palette.secondary.main,
+            width: "4rem",
+            height: "4rem",
+
+            backgroundColor: "",
+            boxShadow: theme.palette.primary.main,
+            borderRadius: "50%",
+
+            postion: "fixed",
+            bottom: "4rem",
+            right: "4rem",
+            zIndex: "999",
+
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            cursor: "pointer",
+
+            ...(isSmallMediaQuery && {
+              right: "2rem",
+              bottom: "2rem",
+            }),
+          }}
+        >
+          <FaArrowUp />
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 

@@ -10,12 +10,19 @@ import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
 import LineBreak from "../components/blocks/LineBreak";
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import ProgressBar from "../components/blocks/ProgressBar";
 
 const Home: NextPage = ({ data }: any) => {
+  const theme = useTheme();
   return (
-    <Box sx={{ fontFamily: "Manrope, sans-serif" }}>
+    <Box
+      sx={{
+        fontFamily: "Manrope, sans-serif",
+        background: theme.palette.background.default,
+        color: theme.palette.text.primary,
+      }}
+    >
       <Head>
         <title>fivehanz.xyz | Haniel</title>
         <link

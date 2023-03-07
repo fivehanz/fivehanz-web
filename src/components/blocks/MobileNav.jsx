@@ -7,17 +7,18 @@ const MobileNav = ({ mobileNavClass, navLinks, toggleMobileNav }) => {
 
   // backgroundcolor calculator with primary color from theme
   const backgroundColor = () => {
-    const rgb = hexRgb(theme.palette.primary.main, { alpha: 0.75 });
+    const rgb = hexRgb(theme.palette.background.default, { alpha: 0.75 });
     return `rgba(${rgb.red}, ${rgb.green}, ${rgb.blue}, ${rgb.alpha})`;
   };
 
   const MobileLinkStyle = css`
-    color: white;
+    color: ${theme.palette.text.primary};
     font-size: 1.25rem;
+    font-weight: 600;
     display: block;
     margin: 0.5rem 0;
     padding: 0.5rem;
-    border: 2px solid white;
+    border: 2px solid ${theme.palette.text.primary};
   `;
 
   return (
