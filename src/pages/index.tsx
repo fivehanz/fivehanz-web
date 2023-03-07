@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { motion, useScroll } from "framer-motion";
 import { gql } from "@apollo/client";
 import client from "../../apolloClient";
 import type { NextPage } from "next";
@@ -12,10 +11,9 @@ import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
 import LineBreak from "../components/blocks/LineBreak";
 import { Box } from "@mui/material";
+import ProgressBar from "../components/blocks/ProgressBar";
 
 const Home: NextPage = ({ data }: any) => {
-  const { scrollYProgress } = useScroll();
-
   return (
     <Box sx={{ fontFamily: "Manrope, sans-serif" }}>
       <Head>
@@ -42,10 +40,7 @@ const Home: NextPage = ({ data }: any) => {
       </Head>
 
       {/* progress bar on top */}
-      <motion.div
-        className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
-      />
+      <ProgressBar />
 
       <Header />
       <Hero />
