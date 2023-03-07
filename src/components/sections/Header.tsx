@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Navbar from "../blocks/Navbar";
 import MobileNav from "../blocks/MobileNav";
+import { Container } from "@mui/material";
 
 const navLinks: Link[] = [
   { id: "1", title: "home", href: "#home", external: false },
@@ -33,12 +34,13 @@ const Header = () => {
   };
 
   return (
-    <header className="container">
+    <header>
       <MobileNav
         mobileNavClass={mobileNavClass}
         navLinks={navLinks}
         toggleMobileNav={toggleMobileNav}
       />
+
       <Navbar
         toggleMobileNav={toggleMobileNav}
         isMobileNavOpen={isMobileNavOpen}
