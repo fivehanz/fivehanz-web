@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2](https://github.com/fivehanz/fivehanz-web/compare/v0.6.1...v0.6.2) (2023-03-07)
+
+
+### Bug Fixes
+
+* padding navbar inconsistency ([86e2d16](https://github.com/fivehanz/fivehanz-web/commit/86e2d162d34af24ae143a5ece98d6b3e33252c0c))
+
 ## [0.6.1](https://github.com/fivehanz/fivehanz-web/compare/v0.6.0...v0.6.1) (2023-03-07)
 
 
