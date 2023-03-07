@@ -77,7 +77,7 @@ export async function getStaticProps() {
           }
           links {
             id
-            link
+            href
             title
           }
         }

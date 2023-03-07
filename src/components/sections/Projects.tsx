@@ -4,7 +4,7 @@ import { css } from "@emotion/react";
 
 const Projects = ({ projects }: any) => {
   return (
-    <section className="projects container" id="projects">
+    <section id="projects">
       <Container>
         <Box
           sx={{
@@ -44,7 +44,7 @@ const Projects = ({ projects }: any) => {
         >
           {projects.map((project: Project) => {
             return (
-              <Box sx={{ margin: "4rem 1rem" }} key={project.id}>
+              <Box sx={{ margin: "4rem auto" }} key={project.id}>
                 <Card {...project} />
               </Box>
             );
