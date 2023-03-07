@@ -38,6 +38,8 @@ const Navbar = ({ toggleMobileNav, isMobileNavOpen, navLinks }) => {
                   underline="hover"
                   sx={{
                     color: "white",
+                    fontSize: "1.15rem",
+                    fontWeight: 400,
                   }}
                   target="_blank"
                   rel="noreferrer"
@@ -51,6 +53,8 @@ const Navbar = ({ toggleMobileNav, isMobileNavOpen, navLinks }) => {
                   underline="hover"
                   sx={{
                     color: "white",
+                    fontSize: "1.15rem",
+                    fontWeight: 400,
                   }}
                 >
                   {item.title}

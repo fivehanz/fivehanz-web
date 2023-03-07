@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -7,8 +8,10 @@ const Hero = () => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <section className="hero container">
-        <h1 className="hero-text">software engineer</h1>
+      <section>
+        <Container sx={{ height: "90vh" }}>
+          <h1 className="hero-text">recent blogposts</h1>
+        </Container>
       </section>
     </motion.div>
   );

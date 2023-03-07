@@ -9,8 +9,8 @@ const Brand = () => {
     <Typography
       // @ts-ignore
       sx={css`
-        font-size: ${theme.custom.fontSize.brand};
-        font-weight: ${theme.custom.fontWeight.extraBold};
+        font-size: 2rem;
+        font-weight: 800;
       `}
     >
       fivehanz.

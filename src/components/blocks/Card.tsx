@@ -1,27 +1,63 @@
+import { Box, Chip, Typography } from "@mui/material";
+
 const Card = (props: Project) => {
   const { name, subtitle, description, tags, links } = props;
   return (
-    <div className="card">
-      <div className="thumb-box">
-        <div className="thumb"></div>
-        <div className="tags">
+    <Box
+      // className="card"
+      sx={{ display: "grid", gap: "2rem" }}
+    >
+      <Box
+        // className="thumb-box"
+        sx={{
+          width: "18rem",
+          height: "18rem",
+          background: "gray",
+          position: "relative",
+        }}
+      >
+        <Box className="thumb"></Box>
+        <Box
+          // className="tags"
+          sx={{
+            position: "absolute",
+            bottom: "0",
+            right: "0",
+            display: "flex",
+            justifyContent: "flex-end",
+            flexWrap: "wrap-reverse",
+          }}
+        >
           {tags.map((tag: Tag) => (
-            <span key={tag.id} className="tag">
-              {tag.name}
-            </span>
+            <Chip
+              key={tag.id}
+              sx={{
+                margin: "0.25rem",
+                fontWeight: "400",
+              }}
+              color="secondary"
+              size="small"
+              label={tag.name}
+            />
           ))}
-        </div>
-      </div>
+        </Box>
+      </Box>
 
-      <div className="card-desc">
-        <div className="titles">
-          <h2 className="title">{name || "title not provided"}</h2>
-          <h3 className="subtitle">{subtitle || "subtitle not provided"}</h3>
-        </div>
+      <Box className="card-desc">
+        <Box className="titles">
+          <Typography className="title">
+            {name || "title not provided"}
+          </Typography>
+          <Typography className="subtitle">
+            {subtitle || "subtitle not provided"}
+          </Typography>
+        </Box>
 
-        <p className="paragraph">{description || "description not provided"}</p>
+        <Typography className="paragraph">
+          {description || "description not provided"}
+        </Typography>
 
-        <div className="links">
+        <Box className="links">
           {links.map((link: Link) => (
             <a
               key={link.id}
@@ -33,9 +69,9 @@ const Card = (props: Project) => {
               {link.title}
             </a>
           ))}
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
