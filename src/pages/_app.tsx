@@ -22,6 +22,9 @@ const theme = createTheme({
       extraBold: 800,
     },
   },
+  palette: {
+    mode: "dark",
+  },
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
