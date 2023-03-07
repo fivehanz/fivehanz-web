@@ -1,12 +1,18 @@
-import { AppBar, Box, Toolbar, Container, Link } from "@mui/material";
+import { AppBar, Box, Toolbar, Container, Link, useTheme } from "@mui/material";
 import Brand from "./Brand";
 import HamburgerButton from "./HamburgerButton";
 
 const Navbar = ({ toggleMobileNav, isMobileNavOpen, navLinks }) => {
+  const theme = useTheme();
+
   return (
     <Box>
       <AppBar position="static">
-        <Toolbar>
+        <Box
+          sx={{
+            padding: "0.5rem 0",
+          }}
+        >
           <Container
             sx={{
               display: "flex",
@@ -38,7 +44,7 @@ const Navbar = ({ toggleMobileNav, isMobileNavOpen, navLinks }) => {
                     href={item.href}
                     underline="hover"
                     sx={{
-                      color: "white",
+                      color: theme.palette.text.primary,
                       fontSize: "1.15rem",
                       fontWeight: 400,
                     }}
@@ -53,7 +59,7 @@ const Navbar = ({ toggleMobileNav, isMobileNavOpen, navLinks }) => {
                     href={item.href}
                     underline="hover"
                     sx={{
-                      color: "white",
+                      color: theme.palette.text.primary,
                       fontSize: "1.15rem",
                       fontWeight: 400,
                     }}
@@ -64,7 +70,7 @@ const Navbar = ({ toggleMobileNav, isMobileNavOpen, navLinks }) => {
               )}
             </Box>
           </Container>
-        </Toolbar>
+        </Box>
       </AppBar>
     </Box>
   );
