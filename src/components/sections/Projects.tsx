@@ -1,20 +1,30 @@
-import Card from "../components/Card";
+import { Box, Container, Typography } from "@mui/material";
+import Card from "../blocks/Card";
+import { css } from "@emotion/react";
+import Title from "../blocks/Title";
 
 const Projects = ({ projects }: any) => {
   return (
-    <section className="projects container" id="projects">
-      <div className="projects-heading">
-        <h2 className="projects-text">projects</h2>
-      </div>
-      <div className="projects-items">
-        {projects.map((project: Project) => {
-          return (
-            <div className="projects-item" key={project.id}>
-              <Card {...project} />
-            </div>
-          );
-        })}
-      </div>
+    <section id="projects">
+      <Container>
+        <Title reverse={true}>projects</Title>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+          }}
+        >
+          {projects.map((project: Project) => {
+            return (
+              <Box sx={{ margin: "4rem auto" }} key={project.id}>
+                <Card {...project} />
+              </Box>
+            );
+          })}
+        </Box>
+      </Container>
     </section>
   );
 };

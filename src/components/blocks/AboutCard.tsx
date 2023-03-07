@@ -12,7 +12,11 @@ const AboutCard = () => {
           <h2 className="title">haniel rameshbabu (hanz)</h2>
         </div>
 
+<<<<<<< HEAD:src/components/blocks/AboutCard.tsx
+        <p className="paragraph">wip/tbc.</p>
+=======
         <p className="paragraph">WIP.</p>
+>>>>>>> main:src/components/components/AboutCard.tsx
 
         <div className="social-icons">
           <a

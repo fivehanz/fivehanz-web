@@ -1,8 +1,6 @@
 import Head from "next/head";
-import { motion, useScroll } from "framer-motion";
 import { gql } from "@apollo/client";
 import client from "../../apolloClient";
-
 import type { NextPage } from "next";
 
 import Contact from "../components/sections/Contact";
@@ -11,13 +9,20 @@ import Header from "../components/sections/Header";
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
-import LineBreak from "../components/components/LineBreak";
+import LineBreak from "../components/blocks/LineBreak";
+import { Box, useTheme } from "@mui/material";
+import ProgressBar from "../components/blocks/ProgressBar";
 
 const Home: NextPage = ({ data }: any) => {
-  const { scrollYProgress } = useScroll();
-
+  const theme = useTheme();
   return (
-    <div>
+    <Box
+      sx={{
+        fontFamily: "Manrope, sans-serif",
+        background: theme.palette.background.default,
+        color: theme.palette.text.primary,
+      }}
+    >
       <Head>
         <title>fivehanz.xyz | Haniel</title>
         <link
@@ -42,10 +47,7 @@ const Home: NextPage = ({ data }: any) => {
       </Head>
 
       {/* progress bar on top */}
-      <motion.div
-        className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
-      />
+      <ProgressBar />
 
       <Header />
       <Hero />
@@ -56,7 +58,7 @@ const Home: NextPage = ({ data }: any) => {
       <LineBreak />
       <Contact />
       <Footer />
-    </div>
+    </Box>
   );
 };
 
@@ -77,7 +79,7 @@ export async function getStaticProps() {
           }
           links {
             id
-            link
+            href
             title
           }
         }

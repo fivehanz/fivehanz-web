@@ -1,10 +1,20 @@
-import Brand from "../components/Brand";
+import { Container, Typography } from "@mui/material";
+import Brand from "../blocks/Brand";
 
 const Footer = () => {
   return (
-    <footer className="footer container">
-      <Brand />
-      <p className="copyright">&copy; {new Date().getFullYear()}</p>
+    <footer>
+      <Container
+        sx={{
+          margin: "1rem auto",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Brand />
+        <Typography>&copy; {new Date().getFullYear()}</Typography>
+      </Container>
     </footer>
   );
 };

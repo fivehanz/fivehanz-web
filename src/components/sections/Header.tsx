@@ -1,64 +1,60 @@
-import { useEffect, useState } from "react";
-import Brand from "../components/Brand";
-import BurgerMenu from "../components/BurgerMenu";
-import DesktopNav from "../components/DesktopNav";
-import MobileNav from "../components/MobileNav";
-import Navbar from "../components/Navbar";
+import { useState } from "react";
+
+import Navbar from "../blocks/Navbar";
+import MobileNav from "../blocks/MobileNav";
+import { Container } from "@mui/material";
 
 const navLinks: Link[] = [
+<<<<<<< HEAD
+  { id: "1", title: "home", href: "#home", external: false },
+  {
+    id: "5",
+    title: "devBlog",
+    href: "https://blog.fivehanz.xyz",
+    external: true,
+  },
+  { id: "2", title: "projects", href: "#projects", external: false },
+  { id: "3", title: "about", href: "#about", external: false },
+  { id: "4", title: "contact", href: "#contact", external: false },
+=======
   { id: "1", title: "home", link: "#home" },
   { id: "5", title: "devBlog", link: "https://blog.fivehanz.xyz" },
   { id: "2", title: "projects", link: "#projects" },
   { id: "3", title: "about", link: "#about" },
   { id: "4", title: "contact", link: "#contact" },
+>>>>>>> main
 ];
 
 const Header = () => {
-  const [mobileNavClass, setMobileNavClass] = useState("mobile-nav hidden");
+  const [mobileNavClass, setMobileNavClass] = useState("none");
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-  const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
-  const [isBurgerClicked, setIsBurgerClicked] = useState(false);
 
-  const toggleBurgerClass = () => {
-    if (!isBurgerClicked) {
-      setBurgerClass("burger-bar clicked");
+  // toggle function for mobileNav
+  const toggleMobileNav = () => {
+    if (isMobileNavOpen) {
+      setMobileNavClass(() => "none");
     } else {
-      setBurgerClass("burger-bar unclicked");
+      setMobileNavClass(() => "inherit");
     }
 
-    setIsBurgerClicked(!isBurgerClicked);
-  };
-
-  const handleClick = () => {
-    if (!isMobileNavOpen) {
-      setMobileNavClass("mobile-nav visible");
-    } else {
-      setMobileNavClass("mobile-nav hidden");
-    }
-
-    toggleBurgerClass();
     setIsMobileNavOpen(() => !isMobileNavOpen);
+    console.log("INFO: toggleMobileNav called");
   };
 
   return (
-    <div className="header">
+    <header>
       <MobileNav
-        navLinks={navLinks}
         mobileNavClass={mobileNavClass}
-        handleClick={handleClick}
+        navLinks={navLinks}
+        toggleMobileNav={toggleMobileNav}
       />
-      <header className="container">
-        <Brand />
 
-        <Navbar
-          BurgerMenu={BurgerMenu}
-          burgerClass={burgerClass}
-          handleClick={handleClick}
-          DesktopNav={DesktopNav}
-          navLinks={navLinks}
-        />
-      </header>
-    </div>
+      <Navbar
+        toggleMobileNav={toggleMobileNav}
+        isMobileNavOpen={isMobileNavOpen}
+        navLinks={navLinks}
+      />
+    </header>
   );
 };
 
