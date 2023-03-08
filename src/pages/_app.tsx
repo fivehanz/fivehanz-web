@@ -1,9 +1,9 @@
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider, Box } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import "../styles/globals.scss";
 
 import type { AppProps } from "next/app";
-import GoToTop from "../components/blocks/GoToTop";
+// import GoToTop from "../components/blocks/GoToTop";
 
 const theme = createTheme({
   custom: {
@@ -31,8 +31,16 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <CssBaseline>
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-        <GoToTop />
+        <Box
+          sx={
+            {
+              // position: "relative",
+            }
+          }
+        >
+          <Component {...pageProps} />
+          {/* <GoToTop /> */}
+        </Box>
       </ThemeProvider>
     </CssBaseline>
   );

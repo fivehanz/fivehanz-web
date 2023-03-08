@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       <Container
         sx={{
-          margin: "1rem auto",
+          marginTop: "1rem",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
