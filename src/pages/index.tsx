@@ -13,7 +13,7 @@ import LineBreak from "../components/blocks/LineBreak";
 import { Box, useTheme } from "@mui/material";
 import ProgressBar from "../components/blocks/ProgressBar";
 
-const Home: NextPage = ({ data }: any) => {
+const Home: NextPage = ({ data, blogs }: any) => {
   const theme = useTheme();
   return (
     <Box
@@ -50,7 +50,7 @@ const Home: NextPage = ({ data }: any) => {
       <ProgressBar />
 
       <Header />
-      <Hero />
+      <Hero blogs={blogs} />
       <LineBreak />
       <Projects projects={data.projects} />
       <LineBreak />
@@ -65,6 +65,16 @@ const Home: NextPage = ({ data }: any) => {
 export default Home;
 
 export async function getStaticProps() {
+  const url = "https://json-api-blog.fivehanz.xyz/";
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    const message = `An error has occured: ${res.status}`;
+    throw new Error(message);
+  }
+
+  const blogs = await res.json();
+
   const { data } = await client.query({
     query: gql`
       {
@@ -90,6 +100,7 @@ export async function getStaticProps() {
   return {
     props: {
       data: data,
+      blogs: blogs.rss.channel.item,
     },
   };
 }
