@@ -5,7 +5,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 const Card = (props: Project) => {
   const { name, subtitle, description, tags, links } = props;
   const theme = useTheme();
-  const isSmallMediaQuery = useMediaQuery(theme.breakpoints.down("sm"));
+  const isSmallMediaQuery = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box
