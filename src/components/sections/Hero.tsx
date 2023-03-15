@@ -19,7 +19,7 @@ const Hero = ({ blogs }) => {
             alignContent: "center",
             gap: "2rem",
             flexWrap: "wrap",
-            margin: "4rem auto",
+            margin: "4rem 0",
             minHeight: "inherit",
 
             ...(isMediumMediaQuery && {
