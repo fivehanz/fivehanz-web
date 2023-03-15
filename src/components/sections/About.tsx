@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Box } from "@mui/material";
 import AboutCard from "../blocks/AboutCard";
 import Title from "../blocks/Title";
 
@@ -7,9 +7,18 @@ const About = () => {
     <section id="about">
       <Container>
         <Title underlineWidth="3rem">about</Title>
-        <div className="about-card-box">
+        <Box
+          className="about-card-box"
+          sx={{
+            padding: "2.5rem 0",
+            margin: "4rem 1rem",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <AboutCard />
-        </div>
+        </Box>
         <div className="wip">
           <h2>WIP/TBC</h2>
         </div>
