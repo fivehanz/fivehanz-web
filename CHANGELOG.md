@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.3](https://github.com/fivehanz/fivehanz-web/compare/v0.6.2...v0.6.3) (2023-03-15)
+
+
+### Bug Fixes
+
+* mob alignment ([fb290ca](https://github.com/fivehanz/fivehanz-web/commit/fb290ca021910e3f465307f46f82acfd26e0709c))
+
 ## [0.6.2](https://github.com/fivehanz/fivehanz-web/compare/v0.6.1...v0.6.2) (2023-03-07)
 
 
