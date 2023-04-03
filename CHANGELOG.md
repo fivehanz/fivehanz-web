@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.4](https://github.com/fivehanz/fivehanz-web/compare/v0.6.3...v0.6.4) (2023-04-03)
+
+
+### Bug Fixes
+
+* about responsive ([a9ac8b6](https://github.com/fivehanz/fivehanz-web/commit/a9ac8b6282980ab73001ff699f70be6ba9dd1634))
+
 ## [0.6.3](https://github.com/fivehanz/fivehanz-web/compare/v0.6.2...v0.6.3) (2023-03-15)
 
 
