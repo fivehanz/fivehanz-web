@@ -19,9 +19,9 @@ const About = () => {
         >
           <AboutCard />
         </Box>
-        <div className="wip">
+        {/* <div className="wip">
           <h2>WIP/TBC</h2>
-        </div>
+        </div> */}
       </Container>
     </section>
   );

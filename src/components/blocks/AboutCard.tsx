@@ -21,6 +21,11 @@ const AboutCard = () => {
 
         ...(isSmallMediaQuery && {
           minWidth: "85vw",
+          // gridTemplateRows: "18rem auto",
+        }),
+        ...(!isSmallMediaQuery && {
+          width: "55rem",
+          gridTemplateColumns: "18rem auto",
         }),
       }}
     >
@@ -73,7 +78,7 @@ const AboutCard = () => {
             color: theme.palette.secondary.main,
           }}
         >
-          wip/tbc.
+          WIP / TBC.
         </Typography>
 
         <Box
@@ -92,7 +97,7 @@ const AboutCard = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Linkedin />
+            <Linkedin width={40} height={40} />
           </Link>
           <Link
             href="https://twitter.com/fivehanz"
@@ -100,7 +105,7 @@ const AboutCard = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Twitter />
+            <Twitter width={40} height={40} />
           </Link>
           <Link
             href="https://github.com/fivehanz"
@@ -108,7 +113,7 @@ const AboutCard = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Github />
+            <Github width={40} height={40} />
           </Link>
           <Link
             href="https://gitlab.com/fivehanz/"
@@ -116,7 +121,7 @@ const AboutCard = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Gitlab />
+            <Gitlab width={40} height={40} />
           </Link>
           <Link
             href="https://hashnode.com/@fivehanz"
@@ -124,7 +129,7 @@ const AboutCard = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Hashnode />
+            <Hashnode width={40} height={40} />
           </Link>
         </Box>
       </Box>

@@ -51,11 +51,11 @@ const Home: NextPage = ({ data, blogs }: any) => {
 
       <Header />
       <Hero blogs={blogs} />
-      <LineBreak />
+      {/* <LineBreak /> */}
       <Projects projects={data.projects} />
-      <LineBreak />
+      {/* <LineBreak /> */}
       <About />
-      <LineBreak />
+      {/* <LineBreak /> */}
       <Contact />
       <Footer />
     </Box>
