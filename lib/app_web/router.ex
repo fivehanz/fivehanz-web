@@ -1,6 +1,8 @@
 defmodule AppWeb.Router do
   use AppWeb, :router
 
+  use AshAuthentication.Phoenix.Router
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -18,6 +20,11 @@ defmodule AppWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    sign_in_route()
+    sign_out_route AuthController
+    auth_routes_for App.Users.User, to: AuthController
+    reset_route []
   end
 
   # Other scopes may use custom stacks.

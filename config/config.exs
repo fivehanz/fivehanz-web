@@ -12,7 +12,8 @@ import Config
 config :ash, :use_all_identities_in_manage_relationship?, false
 
 config :app,
-  ecto_repos: [App.Repo]
+  ecto_repos: [App.Repo],
+  ash_apis: [App.Projects, App.Users]
 
 # Configures the endpoint
 config :app, AppWeb.Endpoint,

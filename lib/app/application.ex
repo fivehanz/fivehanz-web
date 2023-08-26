@@ -18,9 +18,10 @@ defmodule App.Application do
       # Start Finch
       {Finch, name: App.Finch},
       # Start the Endpoint (http/https)
-      AppWeb.Endpoint
+      AppWeb.Endpoint,
       # Start a worker by calling: App.Worker.start_link(arg)
       # {App.Worker, arg}
+      {AshAuthentication.Supervisor, otp_app: :app}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
