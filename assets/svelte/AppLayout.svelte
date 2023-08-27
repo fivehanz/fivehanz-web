@@ -1,5 +1,5 @@
 <script>
-  import { AppShell, AppBar, LightSwitch } from "@skeletonlabs/skeleton";
+  import { AppShell, AppBar } from "@skeletonlabs/skeleton";
 </script>
 
 <AppShell>
@@ -9,9 +9,7 @@
       <svelte:fragment slot="lead">
         <h2 class="h2">app bar</h2>
       </svelte:fragment>
-      <svelte:fragment slot="trail">
-        <LightSwitch />
-      </svelte:fragment>
+      <svelte:fragment slot="trail" />
     </AppBar>
   </svelte:fragment>
 
