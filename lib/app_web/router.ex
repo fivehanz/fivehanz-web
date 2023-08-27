@@ -21,7 +21,7 @@ defmodule AppWeb.Router do
 
     get "/", PageController, :home
 
-    sign_in_route()
+    sign_in_route overrides: [AppWeb.AuthOverrides, AshAuthentication.Phoenix.Overrides.Default]
     sign_out_route AuthController
     auth_routes_for App.Users.User, to: AuthController
     reset_route []

@@ -1,4 +1,7 @@
 defmodule App.Users.Registry do
+  @moduledoc """
+  Registry for users resource
+  """
   use Ash.Registry,
     extensions: [
       Ash.Registry.ResourceValidations

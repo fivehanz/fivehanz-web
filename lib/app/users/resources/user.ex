@@ -1,4 +1,7 @@
 defmodule App.Users.User do
+  @moduledoc """
+  User resource
+  """
   use Ash.Resource,
     data_layer: AshPostgres.DataLayer,
     extensions: [AshAuthentication]
@@ -21,6 +24,10 @@ defmodule App.Users.User do
       password :password do
         identity_field(:email)
         sign_in_tokens_enabled?(true)
+
+        resettable do
+          sender(App.Users.User.Senders.SendPasswordResetEmail)
+        end
       end
     end
 

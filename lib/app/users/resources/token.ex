@@ -1,4 +1,7 @@
 defmodule App.Users.Token do
+  @moduledoc """
+  Token resource
+  """
   use Ash.Resource,
     data_layer: AshPostgres.DataLayer,
     extensions: [AshAuthentication.TokenResource]
