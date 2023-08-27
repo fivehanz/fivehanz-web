@@ -10,11 +10,13 @@ defmodule AppWeb.Router do
     plug :put_root_layout, html: {AppWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :load_from_session
   end
 
-  # pipeline :api do
-  #   plug :accepts, ["json"]
-  # end
+  pipeline :api do
+    plug :accepts, ["json"]
+    plug :load_from_bearer
+  end
 
   scope "/", AppWeb do
     pipe_through :browser
