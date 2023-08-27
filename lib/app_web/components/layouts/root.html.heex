@@ -12,8 +12,10 @@
     </script>
   </head>
   <body data-theme="modern">
-    <.svelte name="AppLayout">
-      <%= @inner_content %>
-    </.svelte>
+    <div style="display: contents" class="h-full overflow-hidden">
+      <.svelte name="AppLayout">
+        <%= @inner_content %>
+      </.svelte>
+    </div>
   </body>
 </html>
