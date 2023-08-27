@@ -14,7 +14,9 @@
   </svelte:fragment>
 
   <!-- main section -->
-  <slot />
+  <main>
+    <slot />
+  </main>
 
   <!-- footer -->
   <svelte:fragment slot="footer">
