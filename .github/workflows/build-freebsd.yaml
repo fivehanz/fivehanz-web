@@ -20,10 +20,8 @@ jobs:
           shell: bash
           environment_variables: MIX_ENV
           run: |
-            uname -a
-            echo $SHELL
-            pwd
-            ls -lah
-            whoami
             sudo pkg update
-            env | sort
+            sudo pkg install -y node20 erlang elixir-devel
+            mix deps.get
+            mix release
+            mix freebsd.pkg
