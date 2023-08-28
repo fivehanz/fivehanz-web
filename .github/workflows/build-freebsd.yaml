@@ -20,8 +20,6 @@ jobs:
           shell: bash
           environment_variables: MIX_ENV
           run: |
-            sudo pkg update
-            sudo pkg install -y node20 erlang elixir-devel
-            mix deps.get
-            mix release
-            mix freebsd.pkg
+            sudo pkg update && sudo pkg install -y node20 erlang elixir-devel
+            mix deps.get && mix release && mix freebsd.pkg
+            ls -l | grep *.pkg
