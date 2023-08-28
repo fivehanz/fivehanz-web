@@ -18,12 +18,12 @@ jobs:
           operating_system: freebsd
           version: "13.2"
           shell: bash
-          environment_variables: "MIX_ENV"
+          environment_variables: MIX_ENV
           run: |
             uname -a
             echo $SHELL
             pwd
             ls -lah
             whoami
-            pkg update
+            sudo pkg update
             env | sort
