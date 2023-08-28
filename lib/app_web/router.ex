@@ -1,6 +1,5 @@
 defmodule AppWeb.Router do
   use AppWeb, :router
-
   use AshAuthentication.Phoenix.Router
 
   pipeline :browser do
@@ -27,6 +26,13 @@ defmodule AppWeb.Router do
     sign_out_route AuthController
     auth_routes_for App.Users.User, to: AuthController
     reset_route []
+  end
+
+  # this scope needs to be signed in / authenticated
+  scope "/dashboard", AppWeb do
+    pipe_through :browser
+
+    get "/", DashboardController, :home
   end
 
   # Other scopes may use custom stacks.
