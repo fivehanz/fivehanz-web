@@ -18,11 +18,6 @@ jobs:
           operating_system: freebsd
           version: "13.2"
           shell: bash
-          environment_variables: "MIX_ENV"
+          environment_variables: MIX_ENV
           run: |
-            uname -a
-            echo $SHELL
-            pwd
-            ls -lah
-            whoami
-            env | sort
+            sudo pkg update && sudo pkg install -y node20 npm-node20 erlang elixir-devel gmake && mix deps.get && mix release && mix freebsd.pkg
