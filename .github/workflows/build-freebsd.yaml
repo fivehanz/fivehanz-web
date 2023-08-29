@@ -20,4 +20,4 @@ jobs:
           shell: bash
           environment_variables: MIX_ENV
           run: |
-            sudo pkg update && sudo pkg install -y node20 npm-node20 erlang elixir-devel gmake && mix deps.get && mix release && mix freebsd.pkg
+            sudo pkg update && sudo pkg install -y node20 npm-node20 erlang elixir-devel gmake && mix deps.get --only prod && mix release && mix freebsd.pkg
