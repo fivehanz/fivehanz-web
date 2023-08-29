@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.7.0](https://github.com/fivehanz/fivehanz-web/compare/v0.6.4...v0.7.0) (2023-08-29)
+
+
+### Features
+
+* ash auth works ([128a8b9](https://github.com/fivehanz/fivehanz-web/commit/128a8b9f22beb4d366856cf60e72be7c3492dd1f))
+* **auth:** login, register, signout works ([d53baf8](https://github.com/fivehanz/fivehanz-web/commit/d53baf8d6cb39801a30c5526d22f4ab540f1353a))
+* Elixir CI ([cb7b357](https://github.com/fivehanz/fivehanz-web/commit/cb7b35729db8148e29e4e0b24c147fd7a0c53208))
+* freebsd CD ([a2783b8](https://github.com/fivehanz/fivehanz-web/commit/a2783b8c1e23dcb96eabcb0d9336cd64ac7e236c))
+* working svelte ([424663f](https://github.com/fivehanz/fivehanz-web/commit/424663fe60a439b63ee5fc4589c3bba4505e3bf7))
+
 ## [0.6.4](https://github.com/fivehanz/fivehanz-web/compare/v0.6.3...v0.6.4) (2023-04-03)
 
 
