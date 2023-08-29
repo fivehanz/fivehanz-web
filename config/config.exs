@@ -17,7 +17,6 @@ config :app,
 
 # Configures the endpoint
 config :app, AppWeb.Endpoint,
-  server: true,
   url: [host: "localhost"],
   render_errors: [
     formats: [html: AppWeb.ErrorHTML, json: AppWeb.ErrorJSON],
