@@ -7,16 +7,14 @@
   <svelte:fragment slot="header">
     <AppBar>
       <svelte:fragment slot="lead">
-        <h2 class="h2">app bar</h2>
+        <h2 class="h2">fivehanz.</h2>
       </svelte:fragment>
       <svelte:fragment slot="trail" />
     </AppBar>
   </svelte:fragment>
 
   <!-- main section -->
-  <main>
-    <slot />
-  </main>
+  <slot />
 
   <!-- footer -->
   <svelte:fragment slot="footer">

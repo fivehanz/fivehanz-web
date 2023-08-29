@@ -15,6 +15,12 @@ dependencies:
     version: file:../deps/phoenix_live_view
 
 devDependencies:
+  '@iconify/icons-openmoji':
+    specifier: ^1.2.26
+    version: 1.2.26
+  '@iconify/svelte':
+    specifier: ^3.1.4
+    version: 3.1.4(svelte@4.2.0)
   '@skeletonlabs/skeleton':
     specifier: 2.0.0-rc.3
     version: 2.0.0-rc.3(svelte@4.2.0)
@@ -252,6 +258,25 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@iconify/icons-openmoji@1.2.26:
+    resolution: {integrity: sha512-7Z1441+2un9D913VHFkpYZhBTxLo0ADcY1mvals6EkLYBxonTRhypHDdxMRbzEFn/LnzM7qCgKf7KcSKj9NZEg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify/svelte@3.1.4(svelte@4.2.0):
+    resolution: {integrity: sha512-YDwQlN46ka8KPRayDb7TivmkAPizfTXi6BSRNqa1IV0+byA907n8JcgQafA7FD//pW5XCuuAhVx6uRbKTo+CfA==}
+    peerDependencies:
+      svelte: '*'
+    dependencies:
+      '@iconify/types': 2.0.0
+      svelte: 4.2.0
+    dev: true
+
+  /@iconify/types@2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+    dev: true
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}

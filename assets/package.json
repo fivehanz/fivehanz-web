@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "@iconify/icons-openmoji": "^1.2.26",
+    "@iconify/svelte": "^3.1.4",
     "@skeletonlabs/skeleton": "2.0.0-rc.3",
     "@skeletonlabs/tw-plugin": "0.1.0-rc.7",
     "esbuild": "^0.16.17",
