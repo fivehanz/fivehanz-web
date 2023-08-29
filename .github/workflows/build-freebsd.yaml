@@ -1,0 +1,23 @@
+name: FreeBSD CD [build]
+
+on:
+  pull_request:
+    branches: ["main"]
+
+env:
+  MIX_ENV: prod
+
+jobs:
+  build:
+    runs-on: macos-12
+    steps:
+      - uses: actions/checkout@v3
+      - name: freebsd 13.2 VM
+        uses: cross-platform-actions/action@v0.15.0
+        with:
+          operating_system: freebsd
+          version: "13.2"
+          shell: bash
+          environment_variables: MIX_ENV
+          run: |
+            sudo pkg update && sudo pkg install -y node20 npm-node20 erlang elixir-devel gmake && mix deps.get --only prod && mix release && mix freebsd.pkg
