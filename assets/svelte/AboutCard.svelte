@@ -83,6 +83,7 @@
     flex-direction: column;
     justify-content: space-around;
     line-height: 1.5;
+    /* text-align: center; */
   }
 
   .titles {
@@ -102,7 +103,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
-    /* margin: 1.5rem 0; */
+    margin: 1.5rem 0;
   }
 
   .social-icon {

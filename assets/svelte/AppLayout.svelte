@@ -20,7 +20,7 @@
   <svelte:fragment slot="footer">
     <!--Copyright section-->
     <div class="p-4 text-center variant-soft-surface">
-      © {new Date().getFullYear()}
+      fivehanz. © {new Date().getFullYear()}
     </div>
   </svelte:fragment>
 </AppShell>
