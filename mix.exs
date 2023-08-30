@@ -4,7 +4,7 @@ defmodule App.MixProject do
   def project do
     [
       app: :app,
-      version: "0.7.1",
+      version: "0.7.2",
       description: "fivehanz-web portfolio website",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
