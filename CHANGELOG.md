@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.2](https://github.com/fivehanz/fivehanz-web/compare/v0.7.1...v0.7.2) (2023-08-30)
+
+
+### Bug Fixes
+
+* check origin ([4049010](https://github.com/fivehanz/fivehanz-web/commit/4049010a8c1de0ed66f026f3d3af315d68b16750))
+
 ## [0.7.1](https://github.com/fivehanz/fivehanz-web/compare/v0.7.0...v0.7.1) (2023-08-30)
 
 
