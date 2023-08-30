@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/fivehanz/fivehanz-web/compare/v0.7.2...v0.8.0) (2023-08-30)
+
+
+### Features
+
+* admin panel ([972eacc](https://github.com/fivehanz/fivehanz-web/commit/972eaccb65d60777f11ef02609976a45111f365a))
+
 ## [0.7.2](https://github.com/fivehanz/fivehanz-web/compare/v0.7.1...v0.7.2) (2023-08-30)
 
 
