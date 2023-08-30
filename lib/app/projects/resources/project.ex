@@ -5,7 +5,12 @@ defmodule App.Projects.Project do
   # Using Ash.Resource turns this module into an Ash resource.
   use Ash.Resource,
     # Tells Ash you want this resource to store its data in Postgres.
-    data_layer: AshPostgres.DataLayer
+    data_layer: AshPostgres.DataLayer,
+    extensions: [AshAdmin.Resource]
+
+  admin do
+    actor?(true)
+  end
 
   # The Postgres keyword is specific to the AshPostgres module.
   postgres do

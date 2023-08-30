@@ -60,6 +60,7 @@ defmodule App.MixProject do
       {:ash_authentication_phoenix, "~> 1.7"},
       {:live_svelte, "~> 0.12.0"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
+      {:ash_admin, "~> 0.9.4"}
       # {:freebsd, "~> 0.5.0"}
     ]
   end
@@ -76,7 +77,7 @@ defmodule App.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.setup": ["tailwind.install --if-missing",  "cmd --cd assets npm install"],
+      "assets.setup": ["tailwind.install --if-missing", "cmd --cd assets npm install"],
       "assets.build": ["tailwind default", "esbuild default"],
       "assets.deploy": [
         "tailwind default --minify",
