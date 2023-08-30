@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/fivehanz/fivehanz-web/compare/v0.7.0...v0.7.1) (2023-08-30)
+
+
+### Bug Fixes
+
+* ssr and Dockerfile ([9814d84](https://github.com/fivehanz/fivehanz-web/commit/9814d840cc3764f7ba4fe806a361742b2d62541b))
+
 ## [0.7.0](https://github.com/fivehanz/fivehanz-web/compare/v0.6.4...v0.7.0) (2023-08-29)
 
 
