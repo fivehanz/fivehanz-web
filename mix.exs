@@ -11,7 +11,7 @@ defmodule App.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      freebsd: freebsd(),
+      # freebsd: freebsd(),
       homepage_url: "https://github.com/fivehanz/fivehanz-web"
     ]
   end
@@ -60,7 +60,7 @@ defmodule App.MixProject do
       {:ash_authentication_phoenix, "~> 1.7"},
       {:live_svelte, "~> 0.12.0"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:freebsd, "~> 0.5.0"}
+      # {:freebsd, "~> 0.5.0"}
     ]
   end
 
@@ -88,17 +88,17 @@ defmodule App.MixProject do
   end
 
   # freebsd pkg management
-  defp freebsd do
-    %{
-      maintainer: "haniel56@zoho.eu",
-      description: "fivehanz-web portfolio website",
-      # optional - user will be created automatically
-      user: "fivehanz-web"
-
-      # optional, documented at https://www.freebsd.org/cgi/man.cgi?pkg-create(8)
-      # deps: %{
-      # bash: %{version: "5.1", origin: "shells/bash"}
-      # }
-    }
-  end
+  # defp freebsd do
+  #   %{
+  #     maintainer: "haniel56@zoho.eu",
+  #     description: "fivehanz-web portfolio website",
+  #     # optional - user will be created automatically
+  #     user: "fivehanz-web"
+  #
+  #     # optional, documented at https://www.freebsd.org/cgi/man.cgi?pkg-create(8)
+  #     # deps: %{
+  #     # bash: %{version: "5.1", origin: "shells/bash"}
+  #     # }
+  #   }
+  # end
 end
