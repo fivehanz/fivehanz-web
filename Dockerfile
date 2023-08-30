@@ -14,15 +14,28 @@
 ARG ELIXIR_VERSION=1.15.4
 ARG OTP_VERSION=26.0.2
 ARG DEBIAN_VERSION=bookworm-20230612-slim
+ARG NODE_VERSION=20.5.1
+ARG NODE_IMAGE_VERSION="${NODE_VERSION}-bookworm-slim"
 
 ARG BUILDER_IMAGE="hexpm/elixir:${ELIXIR_VERSION}-erlang-${OTP_VERSION}-debian-${DEBIAN_VERSION}"
-ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
+ARG RUNNER_IMAGE="node:${NODE_IMAGE_VERSION}"
 
 FROM ${BUILDER_IMAGE} as builder
 
+SHELL ["/bin/bash", "-c"]
+
 # install build dependencies
-RUN apt-get update -y && apt-get install -y build-essential git nodejs npm \
-    && apt-get clean && rm -f /var/lib/apt/lists/*_*
+RUN apt-get update -y && apt-get install -y build-essential git curl wget gpg && install -dm 755 /etc/apt/keyrings \
+  && wget -qO - https://rtx.pub/gpg-key.pub | gpg --dearmor | tee /etc/apt/keyrings/rtx-archive-keyring.gpg 1> /dev/null 
+
+ARG RTX_ARCH="amd64"
+
+RUN echo "deb [signed-by=/etc/apt/keyrings/rtx-archive-keyring.gpg arch=${RTX_ARCH}] https://rtx.pub/deb stable main" | tee /etc/apt/sources.list.d/rtx.list \
+  && apt update && apt install -y rtx && apt-get clean && rm -f /var/lib/apt/lists/*_*
+
+ARG NODE_VERSION=20.5.1
+# install nodejs
+RUN rtx install nodejs@${NODE_VERSION} && rtx use -g nodejs@${NODE_VERSION}
 
 # prepare build dir
 WORKDIR /app
@@ -52,8 +65,10 @@ COPY lib lib
 COPY assets assets
 
 # compile assets
-RUN mix assets.setup
-RUN mix assets.deploy
+# RUN ["/bin/bash", "-c", "source ~/.bashrc && mix assets.setup"]
+#RUN rtx activate bash >> /root/.bashrc && source /root/.bashrc && mix assets.setup
+RUN rtx hook-env -s bash >> ~/.bashrc && source ~/.bashrc \
+  && mix assets.setup && mix assets.deploy
 
 # Compile the release
 RUN mix compile
@@ -70,6 +85,7 @@ FROM ${RUNNER_IMAGE}
 
 RUN apt-get update -y && apt-get install -y libstdc++6 openssl libncurses5 locales \
   && apt-get clean && rm -f /var/lib/apt/lists/*_*
+
 
 # Set the locale
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && locale-gen
