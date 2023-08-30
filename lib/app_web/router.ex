@@ -35,6 +35,13 @@ defmodule AppWeb.Router do
     get "/", DashboardController, :home
   end
 
+  # --> must be authenticated to access, role admin 
+  # import AshAdmin.Router
+  # scope "/ash" do
+  #   pipe_through :browser
+  #   ash_admin "/admin"
+  # end
+
   # Other scopes may use custom stacks.
   # scope "/api", AppWeb do
   #   pipe_through :api
