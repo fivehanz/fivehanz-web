@@ -1,43 +1,42 @@
-# The directory Mix will write compiled artifacts to.
-/_build/
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# If you run "mix test --cover", coverage assets end up here.
-/cover/
+# compiled output
+dist
+tmp
+/out-tsc
 
-# The directory Mix downloads your dependencies sources to.
-/deps/
+# dependencies
+node_modules
 
-# Where 3rd-party dependencies like ExDoc output generated docs.
-/doc/
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# Ignore .fetch files in case you like to edit your project deps locally.
-/.fetch
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# If the VM crashes, it generates a dump, let's ignore it too.
-erl_crash.dump
-
-# Also ignore archive artifacts (built via "mix archive.build").
-*.ez
-
-# Temporary files, for example, from tests.
-/tmp/
-
-# Ignore package tarball (built via "mix hex.build").
-app-*.tar
-
-# Ignore assets that are produced by build tools.
-/priv/static/assets/
-
-# Ignore digested assets cache.
-/priv/static/cache_manifest.json
-
-# In case you use Node.js/npm, you want to ignore these.
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
 npm-debug.log
-/assets/node_modules/
+yarn-error.log
+testem.log
+/typings
 
+# System Files
+.DS_Store
+Thumbs.db
 
-# Ignore automatically generated Svelte files by the ~V sigil
-/assets/svelte/_build/
-
-# Ignore ssr build for svelte.
-/priv/svelte/
+# Next.js
+.next
