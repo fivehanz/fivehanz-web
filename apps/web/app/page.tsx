@@ -1,4 +1,6 @@
-import styles from './page.module.scss';
+import styles from './page.module.css';
+import * as React from 'react';
+import Button from '@mui/material/Button';
 
 export default async function Index() {
   /*
@@ -12,8 +14,7 @@ export default async function Index() {
         <div className="container">
           <div id="welcome">
             <h1>
-              <span> Hello there, </span>
-              Welcome web 👋
+              <Button variant="contained">Hello world</Button>
             </h1>
           </div>
 
