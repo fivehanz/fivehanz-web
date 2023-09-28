@@ -1,0 +1,7 @@
+name = "fivehanz-api"
+compatibility_date = "2023-01-01"
+
+route = { pattern = "fivehanz.xyz/api/*", zone_name = "fivehanz.xyz" }
+
+[vars]
+LIBSQL_DB_URL = ""
