@@ -2,5 +2,4 @@
 experimental = true
 
 [tools]
-elixir = "1.15.4-otp-26"
 node = "20"
