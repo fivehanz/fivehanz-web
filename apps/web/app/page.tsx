@@ -3,6 +3,10 @@
 import { Box, CSSObject, useTheme } from '@mui/material';
 import HeaderSection from '../components/header-section/header-section';
 import HeroSection from '../components/hero-section/hero-section';
+import ProjectSection from '../components/project-section/project-section';
+import AboutSection from '../components/about-section/about-section';
+import ContactSection from '../components/contact-section/contact-section';
+import FooterSection from '../components/footer-section/footer-section';
 
 export default function Index() {
   const theme = useTheme();
@@ -19,6 +23,10 @@ export default function Index() {
     <Box sx={styles}>
       <HeaderSection />
       <HeroSection />
+      <ProjectSection />
+      <AboutSection />
+      <ContactSection />
+      <FooterSection />
     </Box>
   );
 }

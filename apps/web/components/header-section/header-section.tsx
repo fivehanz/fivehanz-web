@@ -6,7 +6,7 @@ import MobileNav from '../mobile-nav/mobile-nav';
 export interface HeaderSectionProps {}
 
 // Define an array of navLinks using the Link interface
-const navLinks: ReadonlyArray<Link> = [
+export const navLinks: ReadonlyArray<Link> = [
   { id: '1', title: 'home', href: '#home', external: false },
   {
     id: '5',

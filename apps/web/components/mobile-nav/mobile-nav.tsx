@@ -16,11 +16,11 @@ export interface MobileNavProps {
  * @param navLinks - Array of navigation links.
  * @returns The mobile navigation component.
  */
-export function MobileNav({
+const MobileNav: React.FC<MobileNavProps> = ({
   toggleMobileNav,
   mobileNavClass,
   navLinks,
-}: MobileNavProps) {
+}) => {
   const theme = useTheme();
 
   /**
@@ -39,7 +39,7 @@ export function MobileNav({
   };
 
   // CSS styles for mobile links
-  const MobileLinkStyle: CSSObject = {
+  const mobileLinkStyle: CSSObject = {
     color: theme.palette.text.primary,
     fontSize: '1.25rem',
     fontWeight: '600',
@@ -78,7 +78,7 @@ export function MobileNav({
             key={item.id}
             href={item.href}
             underline="none"
-            sx={MobileLinkStyle}
+            sx={mobileLinkStyle}
             target={item.external ? '_blank' : undefined}
             rel={item.external ? 'noreferrer' : undefined}
             onClick={toggleMobileNav}
@@ -89,6 +89,6 @@ export function MobileNav({
       </Box>
     </Box>
   );
-}
+};
 
 export default MobileNav;

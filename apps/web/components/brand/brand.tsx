@@ -10,6 +10,7 @@ export function Brand(props: BrandProps) {
         fontSize: '2rem',
         fontWeight: '800',
       }}
+      data-testid="brand"
     >
       fivehanz.
     </Typography>

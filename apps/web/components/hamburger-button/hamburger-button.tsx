@@ -8,9 +8,10 @@ export interface HamburgerButtonProps {
   isMobileNavOpen: boolean;
 }
 
-export function HamburgerButton(props: HamburgerButtonProps) {
-  const { toggleMobileNav, isMobileNavOpen } = props;
-
+export function HamburgerButton({
+  toggleMobileNav,
+  isMobileNavOpen,
+}: HamburgerButtonProps) {
   return (
     <IconButton
       sx={{
@@ -18,13 +19,20 @@ export function HamburgerButton(props: HamburgerButtonProps) {
         zIndex: '1',
       }}
       onClick={toggleMobileNav}
+      data-testid="hamburger-button"
     >
-      {!isMobileNavOpen && (
-        <MenuIcon fontSize="large" sx={{ color: 'white' }} />
-      )}
-
-      {isMobileNavOpen && (
-        <CloseIcon fontSize="large" sx={{ color: 'white' }} />
+      {isMobileNavOpen ? (
+        <CloseIcon
+          fontSize="large"
+          sx={{ color: 'white' }}
+          data-testid="close-icon"
+        />
+      ) : (
+        <MenuIcon
+          fontSize="large"
+          sx={{ color: 'white' }}
+          data-testid="menu-icon"
+        />
       )}
     </IconButton>
   );
