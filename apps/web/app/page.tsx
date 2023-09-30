@@ -2,6 +2,7 @@
 
 import { Box, CSSObject, useTheme } from '@mui/material';
 import HeaderSection from '../components/header-section/header-section';
+import HeroSection from '../components/hero-section/hero-section';
 
 export default function Index() {
   const theme = useTheme();
@@ -17,6 +18,7 @@ export default function Index() {
   return (
     <Box sx={styles}>
       <HeaderSection />
+      <HeroSection />
     </Box>
   );
 }
