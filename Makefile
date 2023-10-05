@@ -1,6 +1,6 @@
 
 
-default:
+default: build
 deps: deps-bun
 dev: dev-web
 test: test-all
@@ -21,7 +21,7 @@ test-all:
 	bun run test
 
 build:
-	bun --bun run build
+	bun --bun run build -- -p web
 
 deps-bun:
 	bun i

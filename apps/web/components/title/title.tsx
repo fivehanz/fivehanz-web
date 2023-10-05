@@ -11,7 +11,7 @@ export interface TitleProps {
 const Title = ({ reverse, children, underlineWidth }: TitleProps) => {
   const theme = useTheme();
   const flexDirection = reverse ? 'row-reverse' : 'row';
-  const underlineStyle = css`
+  const styles = css`
     color: ${theme.palette.text.primary};
     font-size: 1.875rem;
     font-weight: 800;
@@ -33,7 +33,7 @@ const Title = ({ reverse, children, underlineWidth }: TitleProps) => {
       <Typography
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         //@ts-ignore
-        sx={underlineStyle}
+        sx={styles}
       >
         {children}
       </Typography>

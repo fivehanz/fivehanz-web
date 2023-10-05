@@ -1,4 +1,4 @@
-import { Container, Box, Typography } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import AboutCard from '../about-card/about-card';
 import Title from '../title/title';
 import {
