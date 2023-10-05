@@ -7,7 +7,7 @@ type Link = {
   id: string;
   title: string;
   href: string;
-  external: boolean;
+  external?: boolean;
 };
 
 type Project = {
@@ -28,4 +28,9 @@ type Blogpost = {
   pubDate: string;
   link: string;
   creator?: string;
+};
+
+type SocialMediaLink = {
+  href: string;
+  icon: JSX.Element;
 };
