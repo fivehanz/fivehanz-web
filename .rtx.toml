@@ -2,4 +2,4 @@
 experimental = true
 
 [tools]
-node = "18.18.0"
+bun = "latest"
