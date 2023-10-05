@@ -20,3 +20,12 @@ type Project = {
 };
 
 type MobileNavClass = 'inherit' | 'none';
+
+type Blogpost = {
+  guid?: string;
+  title: string;
+  description?: string;
+  pubDate: string;
+  link: string;
+  creator?: string;
+};
