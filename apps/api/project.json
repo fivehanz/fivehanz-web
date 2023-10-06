@@ -40,13 +40,13 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "wrangler dev apps/api/src/main.ts --config apps/api/wrangler.toml"
-      },
+      }
     },
     "deploy": {
       "executor": "nx:run-commands",
       "options": {
         "command": "wrangler deploy apps/api/src/main.ts --config apps/api/wrangler.toml"
-      },
+      }
     },
     "lint": {
       "executor": "@nx/linter:eslint",

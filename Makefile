@@ -2,14 +2,13 @@
 
 default: build
 deps: deps-bun
-dev: dev-web
+dev: dev-all
 test: test-all
 
 
-dev-api:
 	
-dev-web:
-	bun run nx run web:serve
+dev-all:
+	bun run dev
 
 test-web:
 	bun run nx run web:test
