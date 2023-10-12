@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.9.0](https://github.com/fivehanz/fivehanz-web/compare/v0.8.0...v0.9.0) (2023-10-12)
+
+
+### Features
+
+* add header-section ([825b27f](https://github.com/fivehanz/fivehanz-web/commit/825b27f49f5104659ffbb84c64f59533788fc9c8))
+* add unit tests ([00aed71](https://github.com/fivehanz/fivehanz-web/commit/00aed7111ede2e1806fbb8e5eae7cb4eff27e78e))
+
 ## [0.8.0](https://github.com/fivehanz/fivehanz-web/compare/v0.7.2...v0.8.0) (2023-08-30)
 
 
