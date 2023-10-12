@@ -9,6 +9,7 @@ import ContactSection from '../components/contact-section/contact-section';
 import FooterSection from '../components/footer-section/footer-section';
 import ProgressBar from '../components/progress-bar/progress-bar';
 
+// use SWR and fetch on client side
 const projects: Project[] = [
   {
     id: '1',
@@ -28,6 +29,22 @@ const projects: Project[] = [
   },
 ];
 
+// https://api.hashnode.com/
+// {
+//   user(username: "fivehanz") {
+//     publication {
+//       posts(page: 0) {
+//         slug
+//         title
+//         views
+//         dateAdded
+//         dateUpdated
+//       }
+//     }
+//     publicationDomain
+//     numPosts
+//   }
+// }
 const blogs: Blogpost[] = [
   {
     creator: 'Haniel R. (Hanz)',
