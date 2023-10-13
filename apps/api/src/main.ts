@@ -1,19 +1,25 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 
-const app = new Hono();
+type Bindings = {
+  LIBSQL_DB_URL: string;
+  CORS_ORIGIN_URL: string;
+};
+
+const app = new Hono<{ Bindings: Bindings }>();
 
 // Add CORS configs
-app.use(
-  '*',
-  cors({
+app.use('*', async (c, next) => {
+  const corsConfig = cors({
     // Replace with your frontend URL in ENVIRONMENT VARIABLES
-    origin: ['https://fivehanz.xyz', 'https://fivehanz-*.vercel.app'],
+    origin: c.env.CORS_ORIGIN_URL,
     allowMethods: ['POST', 'GET', 'OPTIONS', 'HEAD'],
     maxAge: 600,
     credentials: true,
-  })
-);
+  });
+
+  return corsConfig(c, next);
+});
 app.all('/api/', (c) => c.json({ hello: 'world' }));
 
 // GET endpoints for all projects (READ ALL)
