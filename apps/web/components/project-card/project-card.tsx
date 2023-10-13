@@ -1,29 +1,26 @@
-import { Box, Button, Chip, Link, Typography } from '@mui/material';
+import { Box, Button, Chip, Link, Typography, Skeleton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 /* eslint-disable-next-line */
 export interface ProjectCardProps {
-  project: Project;
+  project?: Project;
+  skeleton?: boolean;
 }
 
 /**
  * Renders a project card component.
  *
  * @param {ProjectCardProps} project - The project object containing information about the project.
+ * @param {boolean} skeleton - A boolean indicating whether the project card is loading.
  * @return {JSX.Element} The rendered project card component.
  */
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard = ({
+  project = undefined,
+  skeleton = false,
+}: ProjectCardProps) => {
   const theme = useTheme();
   const isSmallMediaQuery = useMediaQuery(theme.breakpoints.down('md'));
-
-  const {
-    name = 'title not provided',
-    subtitle = 'subtitle not provided',
-    description = 'description not provided',
-    tags = [],
-    links = [],
-  } = project;
 
   const cardStyles = {
     display: 'grid',
@@ -88,26 +85,30 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <Box sx={cardStyles} className="project-card">
-      <Box sx={thumbBoxStyles}>
-        {/* Outer box for the thumbnail */}
-        <Box className="thumb"></Box>
-        {/* Box for the tags */}
-        <Box sx={tagsStyles}>
-          {/* Mapping over the tags array */}
-          {tags.map((tag: Tag) => (
-            <Chip
-              key={tag.id}
-              sx={{
-                margin: '0.25rem',
-                fontWeight: '600',
-              }}
-              color="secondary"
-              size="small"
-              label={tag.name}
-            />
-          ))}
+      {skeleton ? (
+        <Skeleton sx={thumbBoxStyles} variant="rectangular" />
+      ) : (
+        <Box sx={thumbBoxStyles}>
+          {/* Outer box for the thumbnail */}
+          <Box className="thumb"></Box>
+          {/* Box for the tags */}
+          <Box sx={tagsStyles}>
+            {/* Mapping over the tags array */}
+            {project?.tags.map((tag: Tag) => (
+              <Chip
+                key={tag.id}
+                sx={{
+                  margin: '0.25rem',
+                  fontWeight: '600',
+                }}
+                color="secondary"
+                size="small"
+                label={tag.name}
+              />
+            ))}
+          </Box>
         </Box>
-      </Box>
+      )}
 
       <Box
         sx={{
@@ -118,16 +119,24 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       >
         <Box sx={titlesStyles}>
           {/* Title */}
-          <Typography sx={titleStyles}>{name}</Typography>
+          {skeleton ? (
+            <Skeleton sx={titleStyles} variant="text" />
+          ) : (
+            <Typography sx={titleStyles}>{project?.name}</Typography>
+          )}
           {/* Subtitle */}
-          <Typography sx={subtitleStyles}>{subtitle}</Typography>
+          {skeleton ? (
+            <Skeleton sx={subtitleStyles} variant="text" />
+          ) : (
+            <Typography sx={subtitleStyles}>{project?.subtitle}</Typography>
+          )}
         </Box>
 
         {/* Description */}
-        <Typography sx={paragraphStyles}>{description}</Typography>
+        <Typography sx={paragraphStyles}>{project?.description}</Typography>
 
         <Box sx={linksStyles}>
-          {links.map((link: Link) => (
+          {project?.links.map((link: Link) => (
             // Link Button
             <Button
               variant="contained"

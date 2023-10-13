@@ -8,26 +8,15 @@ import AboutSection from '../components/about-section/about-section';
 import ContactSection from '../components/contact-section/contact-section';
 import FooterSection from '../components/footer-section/footer-section';
 import ProgressBar from '../components/progress-bar/progress-bar';
+import axios from 'axios';
+import useSWR from 'swr';
 
-// use SWR and fetch on client side
-const projects: Project[] = [
-  {
-    id: '1',
-    name: 'Project 1',
-    subtitle: 'Subtitle 1',
-    description: 'Description 1',
-    tags: [{ id: '1', name: 'Tag 1' }],
-    links: [{ id: '1', title: 'Link 1', href: 'https://link1.com' }],
-  },
-  {
-    id: '2',
-    name: 'Project 2',
-    subtitle: 'Subtitle 2',
-    description: 'Description 2',
-    tags: [{ id: '2', name: 'Tag 2' }],
-    links: [{ id: '2', title: 'Link 2', href: 'https://link2.com' }],
-  },
-];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const fetcher = (url: string) => {
+  return axios
+    .get(url, { headers: { Authorization: 'Bearer ' + 'some token' } })
+    .then((res) => res.data);
+};
 
 // https://api.hashnode.com/
 // {
@@ -78,6 +67,7 @@ const blogs: Blogpost[] = [
 
 export default function Index() {
   const theme = useTheme();
+  const { data, isLoading } = useSWR('//fivehanz.xyz/api/projects', fetcher);
 
   // Define the styles object
   const styles: CSSObject = {
@@ -92,7 +82,7 @@ export default function Index() {
       <ProgressBar />
       <HeaderSection />
       <HeroSection blogs={blogs} />
-      <ProjectSection projects={projects} />
+      <ProjectSection projects={data?.projects} isLoading={isLoading} />
       <AboutSection />
       <ContactSection />
       <FooterSection />
