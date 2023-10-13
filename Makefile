@@ -3,10 +3,11 @@
 default: build
 deps: deps-bun
 dev: dev-all
+deploy: deploy-api
 test: test-all
 
 
-	
+
 dev-all:
 	bun run dev
 
@@ -21,6 +22,9 @@ test-all:
 
 build:
 	bun --bun run build -- -p web
+
+deploy-api:
+	bun run nx run api:deploy
 
 deps-bun:
 	bun i

@@ -8,7 +8,7 @@ app.use(
   '*',
   cors({
     // Replace with your frontend URL in ENVIRONMENT VARIABLES
-    origin: 'https://fivehanz.xyz',
+    origin: ['https://fivehanz.xyz', 'https://fivehanz-*.vercel.app'],
     allowMethods: ['POST', 'GET', 'OPTIONS', 'HEAD'],
     maxAge: 600,
     credentials: true,
