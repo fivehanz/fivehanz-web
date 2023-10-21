@@ -86,7 +86,7 @@ const ProjectCard = ({
   return (
     <Box sx={cardStyles} className="project-card">
       {skeleton ? (
-        <Skeleton sx={thumbBoxStyles} variant="rectangular" />
+        <Skeleton sx={thumbBoxStyles} variant="rectangular" animation="wave" />
       ) : (
         <Box sx={thumbBoxStyles}>
           {/* Outer box for the thumbnail */}
@@ -120,13 +120,13 @@ const ProjectCard = ({
         <Box sx={titlesStyles}>
           {/* Title */}
           {skeleton ? (
-            <Skeleton sx={titleStyles} variant="text" />
+            <Skeleton sx={titleStyles} variant="text" animation="wave" />
           ) : (
             <Typography sx={titleStyles}>{project?.name}</Typography>
           )}
           {/* Subtitle */}
           {skeleton ? (
-            <Skeleton sx={subtitleStyles} variant="text" />
+            <Skeleton sx={subtitleStyles} variant="text" animation="wave" />
           ) : (
             <Typography sx={subtitleStyles}>{project?.subtitle}</Typography>
           )}

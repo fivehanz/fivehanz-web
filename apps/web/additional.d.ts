@@ -1,12 +1,23 @@
 type MobileNavClass = 'inherit' | 'none';
 
 type Blogpost = {
-  guid?: string;
+  slug: string;
   title: string;
-  description?: string;
-  pubDate: string;
-  link: string;
-  creator?: string;
+  dateAdded: string;
+  dateUpdated: string;
+  views: number;
+};
+
+type HashnodeBlogApiResponse = {
+  user: BlogData;
+};
+
+type BlogData = {
+  publication: {
+    posts: readonly Blogpost[];
+  };
+  publicationDomain: string;
+  numPosts: number;
 };
 
 type SocialMediaLink = {

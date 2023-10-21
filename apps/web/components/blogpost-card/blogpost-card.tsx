@@ -1,8 +1,17 @@
-import { Box, Link, Typography, useMediaQuery, useTheme } from '@mui/material';
+import {
+  Box,
+  Link,
+  Skeleton,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 
 /* eslint-disable-next-line */
 export interface BlogpostCardProps {
-  post: Blogpost;
+  post?: Blogpost;
+  publicationDomain?: string;
+  skeleton?: boolean;
 }
 
 /**
@@ -13,7 +22,11 @@ export interface BlogpostCardProps {
  * @param {string} post.title - The title of the blog post.
  * @param {string} post.pubDate - The publication date of the blog post.
  */
-const BlogpostCard = ({ post }: BlogpostCardProps): JSX.Element => {
+const BlogpostCard = ({
+  post,
+  skeleton,
+  publicationDomain,
+}: BlogpostCardProps): JSX.Element => {
   // Get the current theme
   const theme = useTheme();
 
@@ -71,13 +84,28 @@ const BlogpostCard = ({ post }: BlogpostCardProps): JSX.Element => {
   // Render the blog post card
   return (
     <Box sx={cardStyle} data-testid="blogpost-card">
-      <Link target="_blank" rel="noreferrer" underline="none" href={post.link}>
-        <Box sx={imageStyle} />
-        <Box sx={textContainerStyle}>
-          <Typography sx={titleStyle}>{post.title}</Typography>
-          <Typography sx={dateStyle}>{post.pubDate}</Typography>
-        </Box>
-      </Link>
+      {skeleton ? (
+        <Link target="_blank" rel="noreferrer" underline="none">
+          <Skeleton sx={imageStyle} variant="rectangular" animation="wave" />
+          <Box sx={textContainerStyle}>
+            <Skeleton sx={titleStyle} variant="text" animation="wave" />
+            <Skeleton sx={dateStyle} variant="text" animation="wave" />
+          </Box>
+        </Link>
+      ) : (
+        <Link
+          target="_blank"
+          rel="noreferrer"
+          underline="none"
+          href={`https://${publicationDomain}/${post?.slug}`}
+        >
+          <Box sx={imageStyle} />
+          <Box sx={textContainerStyle}>
+            <Typography sx={titleStyle}>{post?.title}</Typography>
+            <Typography sx={dateStyle}>{post?.views} views</Typography>
+          </Box>
+        </Link>
+      )}
     </Box>
   );
 };

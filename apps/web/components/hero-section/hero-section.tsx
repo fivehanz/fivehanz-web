@@ -6,7 +6,8 @@ import BlogpostCard from '../blogpost-card/blogpost-card';
 
 /* eslint-disable-next-line */
 export interface HeroSectionProps {
-  blogs: readonly Blogpost[];
+  data: BlogData | undefined;
+  isLoading: boolean;
 }
 
 /**
@@ -14,7 +15,7 @@ export interface HeroSectionProps {
  *
  * @param blogs - An array of Blogpost objects.
  */
-export function HeroSection({ blogs }: HeroSectionProps) {
+export function HeroSection({ data, isLoading }: HeroSectionProps) {
   const theme = useTheme(); // Get the theme object from the Material-UI hook.
   const isMediumMediaQuery = useMediaQuery(theme.breakpoints.down('md')); // Check if the current screen size matches the 'md' breakpoint.
 
@@ -39,9 +40,20 @@ export function HeroSection({ blogs }: HeroSectionProps) {
             }),
           }}
         >
-          {blogs.map((post, index) => (
-            <BlogpostCard key={index} post={post} /> // Render a BlogpostCard component for each blog post in the array.
-          ))}
+          {isLoading && <BlogpostCard skeleton={true} />}
+          {isLoading && <BlogpostCard skeleton={true} />}
+          {isLoading && <BlogpostCard skeleton={true} />}
+
+          {!isLoading &&
+            data?.publication?.posts &&
+            data?.publication?.posts?.map((post, index) => (
+              // Render a BlogpostCard component for each blog post in the array.
+              <BlogpostCard
+                key={index}
+                post={post}
+                publicationDomain={data?.publicationDomain}
+              />
+            ))}
         </Box>
       </Container>
     </section>
