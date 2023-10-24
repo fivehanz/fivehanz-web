@@ -12,13 +12,23 @@ import axios from 'axios';
 import { request } from 'graphql-request';
 import useSWR from 'swr';
 
+/**
+ * Fetches data from the Hashnode API using a GraphQL query.
+ *
+ * @param {string} query - The GraphQL query string.
+ * @return {Promise<HashnodeBlogApiResponse>} - A promise that resolves with the API response data.
+ */
 const gqlFetcher = (query: string): Promise<HashnodeBlogApiResponse> =>
   request('https://api.hashnode.com/', query);
 
+/**
+ * Fetches data from the given URL using Axios.
+ *
+ * @param {string} url - The URL to fetch data from.
+ * @return {Promise<any>} A promise that resolves to the fetched data.
+ */
 const axiosFetcher = (url: string) => {
-  return axios
-    .get(url, { headers: { Authorization: 'Bearer ' + 'some token' } })
-    .then((res) => res.data);
+  return axios.get(url).then((res) => res.data);
 };
 
 export default function Index() {
