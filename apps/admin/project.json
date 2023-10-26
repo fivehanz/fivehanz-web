@@ -4,14 +4,14 @@
   "sourceRoot": "apps/admin",
   "projectType": "application",
   "targets": {
-    "start": {
-      "command": "refine start"
+    "dev": {
+      "command": "cross-env NODE_OPTIONS=--max_old_space_size=4096 cross-env I18NEXT_DEFAULT_CONFIG_PATH=apps/admin/next-i18next.config.js refine dev apps/admin -p nextjs -- -p 4201"
     },
     "build": {
-      "command": "refine build",
+      "command": "refine build apps/admin",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "build"
+        "outputPath": "dist/apps/admin"
       }
     },
     "serve": {
@@ -54,7 +54,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/admin/**/*.{ts,tsx,js,jsx}"]

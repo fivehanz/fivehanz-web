@@ -1,5 +1,3 @@
-
-
 default: build
 deps: deps-bun
 dev: dev-all
@@ -9,25 +7,29 @@ test: test-all
 
 
 dev-all:
-	bun run dev
+	npm run dev
 
 dev-admin:
-	bun run nx run admin:start
+	npm run nx run admin:dev
 
 test-web:
-	bun run nx run web:test
+	npm run nx run web:test
 
 test-api:
-	bun --bun run nx run api:test
+	npm run nx run api:test
 
 test-all:
-	bun run test
+	npm run test
 
 build:
-	bun run build -- -p web, admin
+	npm run build -- -p web, admin
 
 deploy-api:
-	bun run nx run api:deploy
+	npm run nx run api:deploy
 
 deps-bun:
-	bun i
+	npm i
+
+
+upgrade:
+	npx npm-check-updates -u && npm install
