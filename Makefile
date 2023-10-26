@@ -12,7 +12,7 @@ dev-all:
 	bun run dev
 
 dev-admin:
-	bun --bun run nx run admin:serve
+	bun run nx run admin:serve
 
 test-web:
 	bun run nx run web:test
