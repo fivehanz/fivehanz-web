@@ -12,7 +12,7 @@ dev-all:
 	bun run dev
 
 dev-admin:
-	bun --bun run nx run admin:serve
+	bun run nx run admin:start
 
 test-web:
 	bun run nx run web:test
@@ -24,7 +24,7 @@ test-all:
 	bun run test
 
 build:
-	bun --bun run build -- -p web, admin
+	bun run build -- -p web, admin
 
 deploy-api:
 	bun run nx run api:deploy
