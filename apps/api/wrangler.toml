@@ -1,8 +1,8 @@
 name = "fivehanz-api"
 compatibility_date = "2023-01-01"
 
-route = { pattern = "fivehanz.xyz/api/*", zone_name = "fivehanz.xyz" }
+route = { pattern = "web.hanz.lol/api/*", zone_name = "hanz.lol" }
 
 [vars]
 LIBSQL_DB_URL = "libsql://fivehanz-web-fivehanz.turso.io"
-CORS_ORIGIN_URL = "https://fivehanz.xyz"
+CORS_ORIGIN_URL = "https://web.hanz.lol"

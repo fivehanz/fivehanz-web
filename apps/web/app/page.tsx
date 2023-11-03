@@ -56,7 +56,7 @@ export default function Index() {
     gqlFetcher
   );
   const { data: projectData, isLoading: projectIsLoading } = useSWR(
-    '//fivehanz.xyz/api/projects',
+    '//web.hanz.lol/api/projects',
     axiosFetcher
   );
 
