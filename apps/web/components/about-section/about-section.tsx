@@ -18,7 +18,7 @@ const socialMediaLinks: SocialMediaLink[] = [
     icon: <SiLinkedin width={40} height={40} />,
   },
   {
-    href: 'https://twitter.com/fivehanz',
+    href: 'https://twitter.com/hanzxtf',
     icon: <SiTwitter width={40} height={40} />,
   },
   {
@@ -54,7 +54,7 @@ export function AboutSection(props: AboutSectionProps) {
         </Box>
       </Container>
     </section>
-  );
+  )
 }
 
 export default AboutSection;

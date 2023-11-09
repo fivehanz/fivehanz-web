@@ -12,7 +12,7 @@ export function Brand(props: BrandProps) {
       }}
       data-testid="brand"
     >
-      fivehanz.
+      hanz.
     </Typography>
   );
 }
