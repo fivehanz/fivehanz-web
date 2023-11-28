@@ -33,7 +33,32 @@ const axiosFetcher = (url: string) => {
 
 export default function Index() {
   const theme = useTheme();
-
+// // {
+//   user(username: "fivehanz") {
+//     publications(first: 1) {
+//       edges {
+//         node {
+//           posts(first: 3) {
+//             edges {
+//               node {
+//                 url
+//                 title
+//                 brief
+//                 views
+//                 tags {
+//                   name
+//                 }
+//                 coverImage {
+//                   url
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
   const { data: blogData, isLoading: blogIsLoading } = useSWR<
     HashnodeBlogApiResponse,
     unknown
